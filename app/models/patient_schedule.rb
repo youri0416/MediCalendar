@@ -1,0 +1,2 @@
+class PatientSchedule < ApplicationRecord
+end
