@@ -1,2 +1,60 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="main-container">
+  <!-- 左側のコンテンツ -->
+  <div class="left-side">
+    <!-- 患者情報 -->
+    <div class="patient-info">
+      <div class="icon">アイコン</div>
+      <div class="patient-details">
+      <p>患者ID: <span>12345</span></p>
+      <p>患者名: <span>山田 太郎</span></p>
+      <p>生年月日: <span>1990年1月1日</span></p>
+      <p>性別: <span>男性</span></p>
+      <p>病棟: <span>B6</span></p>
+      </div>
+    </div>
+  <div id="patient-calendar"></div>
+</div>
+
+
+  <!-- 右側のコンテンツ -->
+  <div class="right-side">
+    <!-- タイムスケジュール -->
+    <div class="time-schedule">
+      <h3>Drスケジュール</h3>
+      <div class="doctor-info">
+        <p>医師名: <span>山田 太郎</span><button class="edit-button">編集</button></p>
+        <p>診療科: <span>内科</span></p>
+        <p>PHS番号: <span>1234</span></p>
+      </div>
+    </div>
+
+    <!-- ToDoリスト -->
+    <div class="todo-list">
+      <h3>ToDoリスト</h3>
+      <button class="add-task-button">➕</button>
+      <table>
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>タイトル</th>
+            <th>職種</th>
+            <th>名前</th>
+            <th>PHS番号</th>
+            <th>内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>月/日</td>
+            <td>依頼or相談</td>
+            <td>看護師</td>
+            <td>横須賀太郎</td>
+            <td>5678</td>
+            <td>MRIの同意書入ってません</td>
+          </tr>
+          <!-- 他のToDoアイテム -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+<div id="doctor-calendar"></div>

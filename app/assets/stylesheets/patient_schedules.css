@@ -1,0 +1,70 @@
+#calendar {
+  width: 50%; /* カレンダーの幅を調整 */
+  margin: 60px 0 0 0px;
+  max-width: 1000px; /* 最大幅の設定 */
+  height: 600px; /* カレンダーの高さを固定 */
+}
+
+.fc-button {
+  background-color: #4CAF50; /* ボタンの背景色 */
+  border: none;
+  border-radius: 5px; /* 角丸 */
+  color: white;
+  font-size: 14px;
+}
+
+.fc-button:hover {
+  background-color: #45a049; /* ホバー時の色 */
+}
+
+.fc-day:hover {
+  background-color: #d3d3d3; /* ホバー時の背景色 */
+  cursor: pointer;
+}
+
+
+/* 全体のカレンダーの背景色を変更 */
+.fc {
+  background-color: #f5f5f5;
+}
+
+/* 各セル（1日分）の背景色とテキストの色 */
+.fc-daygrid-day {
+  background-color: #ffffff;
+  color: #333333;
+  border: 1px solid #e0e0e0;
+}
+
+/* 日付部分のフォントサイズと色を変更 */
+.fc-daygrid-day-number {
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+/* ヘッダーの色、フォントスタイルを変更 */
+.fc-toolbar-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.fc-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+.fc-button:hover {
+  background-color: #0056b3;
+}
+
+/* イベントのデフォルトの背景色とフォント色 */
+.fc-event {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+/* 週末の背景色を少し変える */
+.fc-day-sat, .fc-day-sun {
+  background-color: #f0f8ff;
+}
