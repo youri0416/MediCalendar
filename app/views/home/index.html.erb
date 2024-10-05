@@ -5,14 +5,35 @@
     <div class="patient-info">
       <div class="icon">アイコン</div>
       <div class="patient-details">
-      <p>患者ID: <span>12345</span></p>
-      <p>患者名: <span>山田 太郎</span></p>
-      <p>生年月日: <span>1990年1月1日</span></p>
-      <p>性別: <span>男性</span></p>
-      <p>病棟: <span>B6</span></p>
+      <p>患者ID: <span>1</span></p>
+      <p>患者名: <span>高橋 健</span></p>
+      <p>生年月日: <span>1985年5月15日</span></p>
+      <p>性別: <span>1</span></p>
+      <p>病棟: <span>1</span></p>
       </div>
     </div>
-  <div id="patient-calendar"></div>
+    <%# 患者カレンダー %>
+<div id="patient-calendar" 
+     data-schedules="<%= @schedules.to_json %>" 
+     data-patient-id="<%= @patient.id%>"> <!-- ここを変更 -->
+</div>
+<div id="eventModal" style="display: none;">
+    <h3>予定を追加</h3>
+    <p id="selectedDateDisplay"></p> <!-- 選択した日付を表示 -->
+    <label for="eventTitle">タイトル:</label>
+    <select id="eventTitle">
+        <option value="">選択してください</option>
+        <option value="入院">入院</option>
+        <option value="退院">退院</option>
+        <option value="検査">検査</option>
+        <option value="手術">手術</option>
+        <option value="説明">説明</option>
+    </select>
+    <button id="addEventBtn">追加</button>
+    <button id="deleteEventBtn">削除</button>
+    <button id="closeModalBtn">閉じる</button>
+</div>
+
 </div>
 
 

@@ -68,3 +68,12 @@
 .fc-day-sat, .fc-day-sun {
   background-color: #f0f8ff;
 }
+
+#eventModal {
+  display: none;
+  border: 1px solid #000;
+  padding: 20px;
+  background: #fff;
+  position: absolute;
+  z-index: 1000;
+}

@@ -23,11 +23,12 @@
 
 #### 患者の予定を管理します。
 
-| Column          | Type     | Options     |
-| --------------- | -------- | ----------- |
-| start_at        | datetime | null: false |
-| end_at          | datetime | null: false |
-| patient_type_id | integer  | null: false |
+| Column          | Type       | Options                       |
+| --------------- | ---------- | ----------------------------- |
+| start_at        | datetime   | null: false                   |
+| end_at          | datetime   | null: false                   |
+| patient_type_id | integer    | null: false                   |
+| patient         | references | null:false, foreign_key: true |
 
 #### Association
 

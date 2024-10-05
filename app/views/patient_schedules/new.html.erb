@@ -1,0 +1,28 @@
+<h1>新規予定作成</h1>
+
+<p>選択した日付: <%= @selected_date %></p>
+
+<%= form_with(model: @patient_schedule, url: patient_patient_schedules_path) do |f| %>
+  <div>
+    <%= f.label :start_at, "開始日時" %>
+    <%= f.datetime_local_field :start_at, 
+        value: "#{@selected_date}T00:00", 
+        min: "#{@selected_date}T00:00", 
+        max: "#{@selected_date}T23:59" %> <!-- 日付部分を固定 -->
+  </div>
+  
+  <div>
+    <%= f.label :end_at, "終了日時" %>
+    <%= f.datetime_local_field :end_at, 
+        value: "#{@selected_date}T01:00", 
+        min: "#{@selected_date}T00:00", 
+        max: "#{@selected_date}T23:59" %> <!-- 日付部分を固定 -->
+  </div>
+  
+  <div>
+    <%= f.label :patient_type_id, "患者タイプ" %>
+    <%= f.number_field :patient_type_id %>
+  </div>
+  
+  <%= f.submit "予定を保存" %>
+<% end %>

@@ -1,0 +1,2 @@
+module PatientSchedulesHelper
+end
