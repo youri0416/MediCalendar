@@ -17,10 +17,10 @@ doctors = Doctor.create!([
 
 # Create fixed patients and ensure creation with create!
 patients = Patient.create!([
-  { number: 1, name: '高橋 健', gender_id: 1, birthday: '1985-05-15', department_id: 1, ward_id: 1, doctor_id: doctors[0].id },
-  { number: 2, name: '田村 美咲', gender_id: 2, birthday: '1990-08-20', department_id: 1, ward_id: 2, doctor_id: doctors[1].id },
-  { number: 3, name: '山本 修', gender_id: 1, birthday: '1978-12-30', department_id: 1, ward_id: 1, doctor_id: doctors[2].id },
-  { number: 4, name: '中村 あかり', gender_id: 2, birthday: '2000-03-10', department_id: 1, ward_id: 3, doctor_id: doctors[3].id }
+  { number: 1001, name: '高橋 健', gender_id: 1, birthday: '1985-05-15', department_id: 1, ward_id: 1, doctor_id: doctors[0].id },
+  { number: 1002, name: '田村 美咲', gender_id: 2, birthday: '1990-08-20', department_id: 1, ward_id: 2, doctor_id: doctors[1].id },
+  { number: 1003, name: '山本 修', gender_id: 1, birthday: '1978-12-30', department_id: 1, ward_id: 1, doctor_id: doctors[2].id },
+  { number: 1004, name: '中村 あかり', gender_id: 2, birthday: '2000-03-10', department_id: 1, ward_id: 3, doctor_id: doctors[3].id }
 ])
 
 # Confirm that patients were created
