@@ -9,13 +9,14 @@
       <p>患者名: <span>高橋 健</span></p>
       <p>生年月日: <span>1985年5月15日</span></p>
       <p>性別: <span>1</span></p>
+      <p>診療科: <span>1</span></p>
       <p>病棟: <span>1</span></p>
       </div>
     </div>
     <%# 患者カレンダー %>
 <div id="patient-calendar" 
      data-schedules="<%= @schedules.to_json %>" 
-     data-patient-id="<%= @patient.id%>"> <!-- ここを変更 -->
+     data-patient-id="1"> <!-- ここを変更 -->
 </div>
 <div id="eventModal" style="display: none;">
     <h3>予定を追加</h3>
