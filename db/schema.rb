@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_04_055139) do
     t.string "name", null: false
     t.integer "gender_id", null: false
     t.date "birthday", null: false
+    t.integer "department_id", null: false
     t.integer "ward_id", null: false
     t.bigint "doctor_id", null: false
     t.datetime "created_at", null: false

@@ -6,14 +6,15 @@
 
 #### 患者の基本情報を管理します。
 
-| Column    | Type       | Options                       |
-| --------- | ---------- | ----------------------------- |
-| number    | integer    | null: false                   |
-| name      | string     | null: false                   |
-| gender_id | integer    | null: false                   |
-| birthday  | date       | null: false                   |
-| ward_id   | integer    | null: false                   |
-| doctor    | references | null:false, foreign_key: true |
+| Column        | Type       | Options                       |
+| ------------- | ---------- | ----------------------------- |
+| number        | integer    | null: false                   |
+| name          | string     | null: false                   |
+| gender_id     | integer    | null: false                   |
+| birthday      | date       | null: false                   |
+| department_id | integer    | null: false                   |
+| ward_id       | integer    | null: false                   |
+| doctor        | references | null:false, foreign_key: true |
 
 #### Association
 
