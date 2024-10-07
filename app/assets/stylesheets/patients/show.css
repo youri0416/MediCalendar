@@ -1,0 +1,111 @@
+/* 全体のレイアウト */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* 左側のスタイル */
+.left-side {
+  flex: 1.5;
+}
+
+/* 患者情報 */
+.patient-info {
+  display: flex;
+  align-items: center; /* アイコンとテキストを垂直方向に中央揃え */
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin-right: 30px; /* アイコンとテキストの間に余白 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.patient-details p {
+  margin: 5px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* 右側のスタイル */
+.right-side {
+  flex: 1.0;
+}
+
+.time-schedule {
+  position: relative; /* 位置を相対的に設定 */
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.doctor-info {
+  margin-bottom: 10px; /* doctor-info全体の下にマージンを追加 */
+}
+.edit-button {
+  margin-left: 10px; /* ボタンとテキストの間に余白を追加 */
+  padding: 5px 10px; /* ボタンの内側の余白 */
+  background-color: #007bff; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* ボタンの境界線をなし */
+  border-radius: 5px; /* ボタンの角を丸くする */
+  cursor: pointer; /* マウスカーソルをポインタに */
+}
+
+.edit-button:hover {
+  background-color: #0056b3; /* ホバー時の色 */
+}
+
+.doctor-info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* ToDoリスト */
+.todo-list {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list table th {
+  background-color: #f4f4f4;
+}
+
+.add-task-button {
+  margin-left: 10px; /* タイトルとの間のスペース */
+  padding: 5px 8px; /* ボタンの内側の余白 */
+  background-color: #28a745; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* ボタンの境界線をなし */
+  border-radius: 5px; /* ボタンの角を丸くする */
+  cursor: pointer; /* マウスカーソルをポインタに */
+  font-size: 16px; /* フォントサイズ */
+}
+
+.add-task-button:hover {
+  background-color: #218838; /* ホバー時の色 */
+}
+

@@ -28,19 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = `/patients/${patientId}/patient_schedules/new?date=${selectedDate}`;
     });
     
-    // 予定を選択した場合の処理
-    patientCalendar.on('eventClick', function(info) {
-        selectedEvent = info.event; // クリックしたイベントを選択
-        document.getElementById('eventTitle').value = selectedEvent.title; // タイトルを設定
-        document.getElementById('selectedDateDisplay').innerText = '選択した日付: ' + selectedEvent.start.toISOString().split('T')[0]; // 日付を表示
-        document.getElementById('eventModal').style.display = 'block'; // モーダルを表示
-    });
-
-    // 閉じるボタンのクリックイベント
-    document.getElementById('closeModalBtn').addEventListener('click', function() {
-        document.getElementById('eventModal').style.display = 'none';
-    });
-
     // 医者用カレンダーの設定
     var doctorCalendarEl = document.getElementById('doctor-calendar'); // 医者カレンダーの要素を取得
     var doctorCalendar = new FullCalendar.Calendar(doctorCalendarEl, {
