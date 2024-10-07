@@ -1,0 +1,28 @@
+<div class="sort-buttons">
+  <button class="btn all-patients-btn" onclick="showAllPatients()">患者一覧</button>
+  <button class="btn ward-btn" onclick="sortPatients('ward')">病棟</button>
+  <button class="btn department-btn" onclick="sortPatients('department')">診療科</button>
+  <button class="btn doctor-btn" onclick="sortPatients('doctor')">医師</button>
+</div>
+
+<div class="patient-list">
+  <% @patients.each do |patient| %>
+    <%= link_to patient_path(patient), data: { turbo: false }, class: "patient-card-link" do %>
+        <div class="patient-card">
+          <div class="patient-icon">
+            アイコン
+          </div>
+          <div class="patient-details">
+            <p>患者ID: <%= patient.number %></p>
+            <p>患者名: <%= patient.name %></p>
+            <p>生年月日: <%= patient.birthday.strftime('%Y年%m月%d日') %></p>
+            <p>年齢: <%= (Date.today.year - patient.birthday.year) - ((Date.today.month > patient.birthday.month || (Date.today.month == patient.birthday.month && Date.today.day >= patient.birthday.day)) ? 0 : 1) %>歳</p>
+            <p>性別: <%= patient.gender.name %></p>
+            <p>診療科: <%= patient.department.name %></p>
+            <p>主治医: <%= patient.doctor.name %></p>
+            <p>病棟: <%= patient.ward.name %></p>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+</div>
