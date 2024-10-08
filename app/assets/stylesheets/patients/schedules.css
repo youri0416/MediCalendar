@@ -1,19 +1,80 @@
-#calendar {
-  width: 50%; /* カレンダーの幅を調整 */
-  margin: 60px 0 0 0px;
-  max-width: 1000px; /* 最大幅の設定 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.main-container {
+  display: flex; /* Flexboxを使用して横並びにする */
+  justify-content: space-between; /* 左右のコンテンツの間にスペースを作る */
+  align-items: flex-start; /* 上揃え */
+  padding: 20px; /* 内側の余白を追加 */
+}
+
+.left-side, .center, .right-side {
+  flex: 1; /* 各コンテンツが同じ幅を持つようにする */
+  margin: 10px; /* 外側の余白を追加 */
+}
+
+.patient-info {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+#patient-calendar, 
+#doctor-calendar {
   height: 600px; /* カレンダーの高さを固定 */
+  background-color: #fff; /* カレンダーの背景色 */
+  border: 1px solid #ccc; /* カレンダーのボーダー */
+  border-radius: 5px; /* カレンダーの角を丸くする */
+  margin-bottom: 20px; /* 下の余白 */
 }
 
-.fc-button {
+/* ToDoリストを上下中央に配置するためのスタイル */
+.todo-list {
+  margin: 20px 0; /* 上下の余白を追加 */
+  padding: 10px; /* 内側の余白 */
+  border: 1px solid #ccc; /* ボーダーを追加 */
+  border-radius: 5px; /* 角を丸くする */
+  background-color: #f9f9f9; /* 背景色 */
+}
+
+.todo-list table {
+  width: 100%; /* テーブルの幅を100%に */
+  border-collapse: collapse; /* ボーダーを重ねて表示 */
+}
+
+.todo-list th, .todo-list td {
+  border: 1px solid #ccc; /* セルのボーダー */
+  padding: 8px; /* セルの内側余白 */
+  text-align: left; /* テキストを左揃え */
+}
+
+h3 {
+  margin: 10px 0; /* ヘッダーのマージン */
+  font-size: 18px; /* ヘッダーのフォントサイズ */
+  color: #333; /* ヘッダーの文字色 */
+}
+
+/* ボタンのスタイル */
+.add-task-button {
   background-color: #4CAF50; /* ボタンの背景色 */
-  border: none;
-  border-radius: 5px; /* 角丸 */
-  color: white;
-  font-size: 14px;
+  color: white; /* ボタンの文字色 */
+  border: none; /* ボーダーなし */
+  padding: 10px 15px; /* 内側の余白 */
+  text-align: center; /* 中央揃え */
+  text-decoration: none; /* 下線なし */
+  display: inline-block; /* インラインブロック表示 */
+  margin: 4px 2px; /* 外側の余白 */
+  cursor: pointer; /* カーソルをポインターに */
+  border-radius: 5px; /* 角を丸くする */
 }
 
-.fc-button:hover {
+.add-task-button:hover {
   background-color: #45a049; /* ホバー時の色 */
 }
 
@@ -21,7 +82,6 @@
   background-color: #d3d3d3; /* ホバー時の背景色 */
   cursor: pointer;
 }
-
 
 /* 全体のカレンダーの背景色を変更 */
 .fc {
@@ -48,16 +108,6 @@
   color: #333;
 }
 
-.fc-button {
-  background-color: #007bff;
-  border: none;
-  color: white;
-}
-
-.fc-button:hover {
-  background-color: #0056b3;
-}
-
 /* イベントのデフォルトの背景色とフォント色 */
 .fc-event {
   background-color: #ffcc00;
@@ -67,13 +117,4 @@
 /* 週末の背景色を少し変える */
 .fc-day-sat, .fc-day-sun {
   background-color: #f0f8ff;
-}
-
-#eventModal {
-  display: none;
-  border: 1px solid #000;
-  padding: 20px;
-  background: #fff;
-  position: absolute;
-  z-index: 1000;
 }
