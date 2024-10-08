@@ -17,9 +17,8 @@
     
     <!-- 患者カレンダー -->
     <div id="patient-calendar"
-      data-schedules="<%= @schedules.to_json %>"
-      data-patient-id="<%= @patient.id %>">
-      <!-- FullCalendarなどのカレンダーのレンダリング部分 -->
+     data-schedules="<%= @schedules_with_names.to_json %>"
+     data-patient-id="<%= @patient.id %>">
     </div>
   </div>
 
