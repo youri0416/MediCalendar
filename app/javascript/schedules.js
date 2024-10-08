@@ -1,6 +1,6 @@
 let patientCalendar; // グローバルスコープで定義
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbo:load', function() {
     var patientCalendarEl = document.getElementById('patient-calendar');
     var schedules = JSON.parse(patientCalendarEl.getAttribute('data-schedules'));
 

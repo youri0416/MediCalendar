@@ -5,52 +5,25 @@
     <div class="patient-info">
       <div class="icon">アイコン</div>
       <div class="patient-details">
-      <p>患者ID: <span><%= @patient.number %></span></p>
-      <p>患者名: <span><%= @patient.name%></span></p>
-      <p>生年月日: <span><%= @patient.birthday.strftime('%Y年%m月%d日') %></span></p>
-      <p>年齢: <span><%= (Date.today.year - @patient.birthday.year) - ((Date.today.month > @patient.birthday.month || (Date.today.month == @patient.birthday.month && Date.today.day >= @patient.birthday.day)) ? 0 : 1) %>歳</span></p>
-      <p>性別: <span><%= @patient.gender.name %></span></p>
-      <p>診療科: <span><%= @patient.department.name %></span></p>
-      <p>病棟: <span><%= @patient.ward.name %></span></p>
+        <p>患者ID: <span><%= @patient.number %></span></p>
+        <p>患者名: <span><%= @patient.name %></span></p>
+        <p>生年月日: <span><%= @patient.birthday.strftime('%Y年%m月%d日') %></span></p>
+        <p>年齢: <span><%= (Date.today.year - @patient.birthday.year) - ((Date.today.month > @patient.birthday.month || (Date.today.month == @patient.birthday.month && Date.today.day >= @patient.birthday.day)) ? 0 : 1) %>歳</span></p>
+        <p>性別: <span><%= @patient.gender.name %></span></p>
+        <p>診療科: <span><%= @patient.department.name %></span></p>
+        <p>病棟: <span><%= @patient.ward.name %></span></p>
       </div>
     </div>
-    <%# 患者カレンダー %>
+    
+    <!-- 患者カレンダー -->
     <div id="patient-calendar"
-      data-schedules="<%= @schedules.to_json %>"
-      data-patient-id="<%= @patient.id %>">
+     data-schedules="<%= @schedules_with_names.to_json %>"
+     data-patient-id="<%= @patient.id %>">
     </div>
   </div>
-<div id="eventModal" style="display: none;">
-    <h3>予定を追加</h3>
-    <p id="selectedDateDisplay"></p> <!-- 選択した日付を表示 -->
-    <label for="eventTitle">タイトル:</label>
-    <select id="eventTitle">
-        <option value="">選択してください</option>
-        <option value="入院">入院</option>
-        <option value="退院">退院</option>
-        <option value="検査">検査</option>
-        <option value="手術">手術</option>
-        <option value="説明">説明</option>
-    </select>
-    <button id="addEventBtn">追加</button>
-    <button id="deleteEventBtn">削除</button>
-    <button id="closeModalBtn">閉じる</button>
-</div>
 
-
-  <!-- 右側のコンテンツ -->
-  <div class="right-side">
-    <!-- タイムスケジュール -->
-    <div class="time-schedule">
-      <h3>Drスケジュール</h3>
-      <div class="doctor-info">
-        <p>医師名: <span><%= @patient.doctor.name %></span><button class="edit-button">編集</button></p>
-        <%# 診療科はアクティブハッシュ使用するため、後ほど修正する %>
-        <p>診療科: <span><%= @patient.doctor.department_id %></span></p>
-        <p>PHS番号: <span><%= @patient.doctor.phone_number %></span></p>
-      </div>
-    </div>
-
+  <!-- 中央のコンテンツ -->
+  <div class="center">
     <!-- ToDoリスト -->
     <div class="todo-list">
       <h3>ToDoリスト</h3>
@@ -80,5 +53,21 @@
       </table>
     </div>
   </div>
-<div id="doctor-calendar"></div>
+
+  <!-- 右側のコンテンツ -->
+  <div class="right-side">
+    <!-- タイムスケジュール -->
+    <div class="time-schedule">
+      <h3>主治医</h3>
+      <div class="doctor-info">
+        <p>医師名: <span><%= @patient.doctor.name %></span></p>
+        <p>診療科: <span><%= @patient.doctor.department_id %></span></p>
+        <p>PHS番号: <span><%= @patient.doctor.phone_number %></span></p>
+      </div>
+    </div>
+
+    <!-- 医者のカレンダー -->
+    <h3>主治医カレンダー</h3>
+    <div id="doctor-calendar"></div>
+  </div>
 </div>

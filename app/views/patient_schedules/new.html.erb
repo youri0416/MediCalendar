@@ -8,7 +8,7 @@
     <%= f.datetime_local_field :start_at, 
         value: "#{@selected_date}T00:00", 
         min: "#{@selected_date}T00:00", 
-        max: "#{@selected_date}T23:59" %> <!-- 日付部分を固定 -->
+        max: "#{@selected_date}T23:59"%>
   </div>
   
   <div>
@@ -16,12 +16,12 @@
     <%= f.datetime_local_field :end_at, 
         value: "#{@selected_date}T01:00", 
         min: "#{@selected_date}T00:00", 
-        max: "#{@selected_date}T23:59" %> <!-- 日付部分を固定 -->
+        max: "#{@selected_date}T23:59"%>
   </div>
   
   <div>
-    <%= f.label :patient_type_id, "患者タイプ" %>
-    <%= f.number_field :patient_type_id %>
+    <%= f.label :patient_type_id, "予定" %>
+    <%= f.collection_select :patient_type_id, PatientType.all, :id, :name, {}, {class:"patient_type_select"} %> 
   </div>
   
   <%= f.submit "予定を保存" %>

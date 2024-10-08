@@ -7,7 +7,7 @@
 
 <div class="patient-list">
   <% @patients.each do |patient| %>
-    <%= link_to patient_path(patient), data: { turbo: false }, class: "patient-card-link" do %>
+    <%= link_to patient_path(patient), class: "patient-card-link" do %>
         <div class="patient-card">
           <div class="patient-icon">
             アイコン
