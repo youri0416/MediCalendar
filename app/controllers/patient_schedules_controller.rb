@@ -7,7 +7,7 @@ class PatientSchedulesController < ApplicationController
   def create
     @patient_schedule = PatientSchedule.new(patient_schedule_params)
     if @patient_schedule.save
-      redirect_to root_path
+      redirect_to patient_path(@patient_schedule.patient_id)
     else
       render :new
     end
