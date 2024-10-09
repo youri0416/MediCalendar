@@ -9,6 +9,7 @@ class CreateTasks < ActiveRecord::Migration[7.0]
       t.string :phone_number, null: false
       t.text :content, null: false
       t.references :doctor, null: false, foreign_key: true
+      t.references :patient, null: false, foreign_key: true
       t.timestamps
     end
   end

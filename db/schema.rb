@@ -61,13 +61,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_08_085515) do
     t.string "phone_number", null: false
     t.text "content", null: false
     t.bigint "doctor_id", null: false
+    t.bigint "patient_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["doctor_id"], name: "index_tasks_on_doctor_id"
+    t.index ["patient_id"], name: "index_tasks_on_patient_id"
   end
 
   add_foreign_key "doctor_schedules", "doctors"
   add_foreign_key "patient_schedules", "patients"
   add_foreign_key "patients", "doctors"
   add_foreign_key "tasks", "doctors"
+  add_foreign_key "tasks", "patients"
 end
