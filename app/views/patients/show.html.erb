@@ -45,8 +45,8 @@
             <td>
             <input type="checkbox" <%= 'checked' if task.completed %> disabled>
           </td>
-          <td><%= Title.find(task.title_id).name if task.title_id.present? %></td> <!-- アクティブハッシュからタイトルを取得 -->
-          <td><%= Occupation.find(task.occupation_id).name if task.occupation_id.present? %></td> <!-- アクティブハッシュから職種を取得 -->
+          <td><%= Title.find(task.title_id).name if task.title_id.present? %></td> 
+          <td><%= Occupation.find(task.occupation_id).name if task.occupation_id.present? %></td> 
           <td><%= task.name %></td>
           <td><%= task.phone_number %></td>
           <td><%= task.content %></td>
