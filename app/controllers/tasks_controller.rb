@@ -8,8 +8,6 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.doctor = @doctor
-    @task.patient = @patient
     if @task.save
       redirect_to doctor_patient_path(@doctor, @patient)
     else
@@ -28,6 +26,6 @@ class TasksController < ApplicationController
   end
   
   def task_params
-    params.require(:task).permit(:title_id, :occupation_id, :name, :phone_number, :content,).merge(doctor_id: @doctor.id, patient_id: @doctor.patient.id)
+    params.require(:task).permit(:title_id, :occupation_id, :name, :phone_number, :content).merge(doctor_id: params[:doctor_id], patient_id: params[:patient_id])
   end
 end
