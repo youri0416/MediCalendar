@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_04_055139) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_08_085515) do
   create_table "doctor_schedules", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "start_at", null: false
     t.datetime "end_at", null: false
@@ -52,7 +52,24 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_04_055139) do
     t.index ["doctor_id"], name: "index_patients_on_doctor_id"
   end
 
+  create_table "tasks", charset: "utf8mb3", force: :cascade do |t|
+    t.boolean "completed", default: false, null: false
+    t.integer "title_id", null: false
+    t.integer "occupation_id", null: false
+    t.string "name", null: false
+    t.string "phone_number", null: false
+    t.text "content", null: false
+    t.bigint "doctor_id", null: false
+    t.bigint "patient_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_tasks_on_doctor_id"
+    t.index ["patient_id"], name: "index_tasks_on_patient_id"
+  end
+
   add_foreign_key "doctor_schedules", "doctors"
   add_foreign_key "patient_schedules", "patients"
   add_foreign_key "patients", "doctors"
+  add_foreign_key "tasks", "doctors"
+  add_foreign_key "tasks", "patients"
 end

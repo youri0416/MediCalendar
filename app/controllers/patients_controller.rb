@@ -9,6 +9,7 @@ class PatientsController < ApplicationController
     @schedules = @patient_schedules.map do |schedule| 
       { title: "#{schedule.patient_type_id}", start: schedule.start_at, end: schedule.end_at } 
     end
+    @doctor = @patient.doctor.id
   end
 
   
