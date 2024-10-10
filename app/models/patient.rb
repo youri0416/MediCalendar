@@ -1,6 +1,6 @@
 class Patient < ApplicationRecord
   has_many :patient_schedules
-  has_meny :tasks
+  has_many :tasks
   belongs_to :doctor
 
   extend ActiveHash::Associations::ActiveRecordExtensions
