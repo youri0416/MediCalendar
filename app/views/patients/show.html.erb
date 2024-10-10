@@ -27,28 +27,31 @@
     <!-- ToDoリスト -->
     <div class="todo-list">
       <h3>ToDoリスト</h3>
-      <button class="add-task-button">➕</button>
+      <%= link_to '➕', new_doctor_task_path(@doctor), class: 'add-task-button' %>
       <table>
         <thead>
           <tr>
-            <th>日付</th>
+            <th>チェック</th>
             <th>タイトル</th>
             <th>職種</th>
             <th>名前</th>
-            <th>PHS番号</th>
+            <th>PHS</th>
             <th>内容</th>
           </tr>
         </thead>
         <tbody>
+          <% @patient.tasks.each do |task| %>
           <tr>
-            <td>月/日</td>
-            <td>依頼or相談</td>
-            <td>看護師</td>
-            <td>横須賀太郎</td>
-            <td>5678</td>
-            <td>MRIの同意書入ってません</td>
+            <td>
+            <input type="checkbox" <%= 'checked' if task.completed %> disabled>
+          </td>
+          <td><%= Title.find(task.title_id).name if task.title_id.present? %></td> <!-- アクティブハッシュからタイトルを取得 -->
+          <td><%= Occupation.find(task.occupation_id).name if task.occupation_id.present? %></td> <!-- アクティブハッシュから職種を取得 -->
+          <td><%= task.name %></td>
+          <td><%= task.phone_number %></td>
+          <td><%= task.content %></td>
           </tr>
-          <!-- 他のToDoアイテム -->
+          <% end %>
         </tbody>
       </table>
     </div>
