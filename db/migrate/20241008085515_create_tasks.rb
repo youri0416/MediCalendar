@@ -2,7 +2,6 @@ class CreateTasks < ActiveRecord::Migration[7.0]
   def change
     create_table :tasks do |t|
       t.boolean :completed, null: false, default: false
-      t.datetime :date, null: false
       t.integer :title_id, null: false
       t.integer :occupation_id, null: false
       t.string :name, null: false

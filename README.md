@@ -75,7 +75,6 @@
 | Column        | Type       | Options                       |
 | ------------- | ---------- | ----------------------------- |
 | completed     | boolean    | null: false, default: false   |
-| date          | datetime   | null: false                   |
 | title_id      | integer    | null: false                   |
 | occupation_id | integer    | null: false                   |
 | name          | string     | null: false                   |

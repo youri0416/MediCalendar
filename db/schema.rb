@@ -54,7 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_08_085515) do
 
   create_table "tasks", charset: "utf8mb3", force: :cascade do |t|
     t.boolean "completed", default: false, null: false
-    t.datetime "date", null: false
     t.integer "title_id", null: false
     t.integer "occupation_id", null: false
     t.string "name", null: false
