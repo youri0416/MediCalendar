@@ -27,7 +27,7 @@
     <!-- ToDoリスト -->
     <div class="todo-list">
       <h3>ToDoリスト</h3>
-      <%= link_to '➕', new_doctor_task_path(@doctor), class: 'add-task-button' %>
+      <%= link_to '➕', new_doctor_patient_task_path(@doctor, @patient), class: 'add-task-button' %>
       <table>
         <thead>
           <tr>
@@ -40,7 +40,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @patient.tasks.each do |task| %>
+          <% @doctor.tasks.each do |task| %>
           <tr>
             <td>
             <input type="checkbox" <%= 'checked' if task.completed %> disabled>

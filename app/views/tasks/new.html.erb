@@ -1,6 +1,6 @@
 <h2>新しいタスクを作成</h2>
 
-<%= form_with(model: [@doctor, @task], local: true) do |f| %>
+<%= form_with(model: [@doctor, @patient, @task], local: true) do |f| %>
 
   <div class="form-group">
     <%= f.label :title_id, "タイトル" %>
