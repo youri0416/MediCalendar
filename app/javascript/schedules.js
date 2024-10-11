@@ -1,7 +1,7 @@
-let patientCalendar; // グローバルスコープで定義
-
-document.addEventListener('turbo:load', function() {
+function calendar (){
+    let patientCalendar; // グローバルスコープで定義
     var patientCalendarEl = document.getElementById("patient-calendar");
+    if (!patientCalendarEl) return false;
 
     // patient-calendar要素が存在する場合に処理を続ける
     if (patientCalendarEl) {
@@ -32,10 +32,23 @@ document.addEventListener('turbo:load', function() {
             // 選択した日付と患者ID、医者IDをパラメータとしてnewアクションにリダイレクト
             window.location.href = `/doctors/${doctorId}/patients/${patientId}/patient_schedules/new?date=${selectedDate}`;
         });
+
+        // イベント（予定）をクリックしたときの処理
+        patientCalendar.on('eventClick', function(info) {
+            selectedEvent = info.event; // クリックされたイベントオブジェクトを取得
+            const scheduleId = selectedEvent.id; // 予定のIDを取得
+            
+            // 患者のIDと医者のIDを取得
+            var patientId = patientCalendarEl.getAttribute('data-patient-id'); 
+            var doctorId = patientCalendarEl.getAttribute('data-doctor-id');
+            
+            // クリックされたイベントのeditページにリダイレクト
+            window.location.href = `/doctors/${doctorId}/patients/${patientId}/patient_schedules/${scheduleId}/edit`;
+        });
     } else {
         console.warn('Element with id "patient-calendar" not found.');
     }
-    
+
     // 医者用カレンダーの設定
     var doctorCalendarEl = document.getElementById('doctor-calendar'); // 医者カレンダーの要素を取得
     var doctorCalendar = new FullCalendar.Calendar(doctorCalendarEl, {
@@ -56,4 +69,7 @@ document.addEventListener('turbo:load', function() {
         ]
     });
     doctorCalendar.render(); // 医者カレンダーを描画
-});
+}
+
+window.addEventListener('turbo:load', calendar);
+window.addEventListener("turbo:render", calendar);
