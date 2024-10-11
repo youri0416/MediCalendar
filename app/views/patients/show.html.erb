@@ -29,6 +29,7 @@
     <div class="todo-list">
       <h3>ToDoリスト</h3>
       <%= link_to '➕', new_doctor_patient_task_path(@doctor, @patient), class: 'add-task-button' %>
+      
       <table>
         <thead>
           <tr>
@@ -38,6 +39,8 @@
             <th>名前</th>
             <th>PHS</th>
             <th>内容</th>
+            <th>編集</th> <!-- 編集ボタン用のヘッダ -->
+            <th>削除</th> <!-- 削除ボタン用のヘッダ -->
           </tr>
         </thead>
         <tbody>
@@ -51,6 +54,18 @@
           <td><%= task.name %></td>
           <td><%= task.phone_number %></td>
           <td><%= task.content %></td>
+          <!-- 編集ボタン -->
+        <td>
+          <%= link_to '編集', edit_doctor_patient_task_path(@doctor, @patient, task), class: 'edit-task-button' %>
+        </td>
+
+        <!-- 削除ボタン -->
+        <td>
+          <%= link_to '削除', doctor_patient_task_path(@doctor, @patient, task), 
+                      method: :delete, 
+                      data: { turbo_method: :delete },
+                      class: 'delete-task-button' %>
+        </td>
           </tr>
           <% end %>
         </tbody>

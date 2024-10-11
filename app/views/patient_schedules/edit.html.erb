@@ -1,15 +1,15 @@
 <%= form_with model: [@doctor, @patient, @patient_schedule], method: :patch do |f| %>
   <!-- 既存の編集フォーム -->
   <div class="field">
-    <%= f.label :start_at %>
+    <%= f.label :開始日 %>
     <%= f.datetime_select :start_at %>
   </div>
   <div class="field">
-    <%= f.label :end_at %>
+    <%= f.label :終了日 %>
     <%= f.datetime_select :end_at %>
   </div>
   <div class="field">
-    <%= f.label :patient_type_id %>
+    <%= f.label :予定 %>
     <%= f.collection_select :patient_type_id, PatientType.all, :id, :name %>
   </div>
   

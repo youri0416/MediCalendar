@@ -1,0 +1,48 @@
+/* フォーム全体のスタイル */
+form {
+  background-color: #f9f9f9; /* 背景色 */
+  border-radius: 8px; /* 角を丸く */
+  padding: 20px; /* 内側の余白 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* シャドウ */
+  max-width: 600px; /* 最大幅 */
+  margin: 20px auto; /* 上下の余白と中央揃え */
+}
+
+/* 各フィールドのスタイル */
+form div {
+  margin-bottom: 15px; /* 各フィールドの間隔 */
+}
+
+/* ラベルのスタイル */
+form label {
+  display: block; /* ラベルをブロック要素に */
+  margin-bottom: 5px; /* ラベルと入力フィールドの間の余白 */
+  font-weight: bold; /* ラベルを太文字に */
+}
+
+/* 入力フィールドのスタイル */
+form input[type="datetime-local"],
+form select,
+form textarea {
+  width: 100%; /* 幅を100%に */
+  padding: 10px; /* 内側の余白 */
+  border: 1px solid #ccc; /* ボーダー */
+  border-radius: 4px; /* 角を丸く */
+  font-size: 16px; /* フォントサイズ */
+  box-sizing: border-box; /* ボックスサイズを計算に含める */
+}
+
+/* ボタンのスタイル */
+form input[type="submit"] {
+  background-color: #007bff; /* ボタンの背景色 */
+  color: white; /* ボタンの文字色 */
+  border: none; /* ボーダーをなし */
+  border-radius: 4px; /* 角を丸く */
+  padding: 10px 15px; /* 内側の余白 */
+  cursor: pointer; /* カーソルをポインタに */
+  font-size: 16px; /* フォントサイズ */
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3; /* ホバー時の色 */
+}

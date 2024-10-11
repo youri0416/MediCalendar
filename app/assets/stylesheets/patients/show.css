@@ -88,25 +88,89 @@ table th, table td {
   background-color: #fff;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ボックスシャドウを維持 */
+  margin: 20px; /* 少し外側にマージンを追加 */
 }
 
-.todo-list table th {
-  background-color: #f4f4f4;
+.todo-list h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333; /* タイトルの色を少し暗めに */
 }
 
+/* 追加ボタンのスタイル */
 .add-task-button {
   margin-left: 10px; /* タイトルとの間のスペース */
-  padding: 5px 8px; /* ボタンの内側の余白 */
+  padding: 8px 12px; /* 少し大きめに */
   background-color: #28a745; /* ボタンの背景色 */
   color: white; /* ボタンの文字色 */
-  border: none; /* ボタンの境界線をなし */
-  border-radius: 5px; /* ボタンの角を丸くする */
+  border: none; /* ボーダーなし */
+  border-radius: 5px; /* ボタンの角を丸く */
   cursor: pointer; /* マウスカーソルをポインタに */
-  font-size: 16px; /* フォントサイズ */
+  font-size: 16px; /* フォントサイズをやや大きめに */
 }
 
 .add-task-button:hover {
   background-color: #218838; /* ホバー時の色 */
 }
 
+/* テーブルのスタイル */
+table {
+  width: 100%; /* 全幅に広げる */
+  border-collapse: collapse; /* セルの間隔を詰める */
+  margin-top: 10px; /* 上の要素とのスペースを確保 */
+  margin-bottom: 20px; /* 下の要素とのスペースを確保 */
+}
+
+table, th, td {
+  border: 1px solid #ddd; /* セルのボーダー */
+}
+
+th, td {
+  padding: 10px; /* セル内の余白を確保 */
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4; /* ヘッダーの背景色 */
+  font-weight: bold; /* ヘッダーの強調 */
+}
+
+/* 編集・削除ボタンのスタイル */
+.edit-task-button, .delete-task-button {
+  display: inline-block;
+  padding: 6px 10px; /* ボタンの内側の余白 */
+  font-size: 14px; /* フォントサイズ */
+  border-radius: 4px; /* 角を少し丸く */
+  text-decoration: none; /* 下線を消す */
+  color: white; /* テキストの色 */
+}
+
+.edit-task-button {
+  background-color: #007bff; /* ブルー */
+  border: none;
+}
+
+.edit-task-button:hover {
+  background-color: #0056b3; /* ホバー時の色 */
+}
+
+.delete-task-button {
+  background-color: #dc3545; /* レッド */
+  border: none;
+}
+
+.delete-task-button:hover {
+  background-color: #c82333; /* ホバー時の色 */
+}
+
+/* チェックボックスのスタイル */
+input[type="checkbox"] {
+  transform: scale(1.5); /* チェックボックスを大きく */
+  margin-right: 10px; /* チェックボックスの右に余白 */
+}
+
+/* テーブル行のホバー時の色変更 */
+table tbody tr:hover {
+  background-color: #f9f9f9; /* 行をホバーしたときの色 */
+}
