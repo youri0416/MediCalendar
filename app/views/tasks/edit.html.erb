@@ -1,0 +1,46 @@
+<% provide(:title, 'タスク編集') %>
+
+<h1>タスク編集</h1>
+
+<%= form_with(model: [@doctor, @patient, @task], local: true) do |form| %>
+  <% if @task.errors.any? %>
+    <div class="error-explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <ul>
+        <% @task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title_id, 'タイトル' %>
+    <%= form.collection_select :title_id, Title.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :occupation_id, '職種' %>
+    <%= form.collection_select :occupation_id, Occupation.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :name, '名前' %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :phone_number, 'PHS' %>
+    <%= form.telephone_field :phone_number, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :content, '内容' %>
+    <%= form.text_area :content, class: 'form-control', rows: 4 %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit '更新', class: 'btn btn-primary' %>
+    <%= link_to 'キャンセル', doctor_patient_path(@doctor, @patient), class: 'btn btn-secondary' %>
+  </div>
+<% end %>
