@@ -1,0 +1,71 @@
+/* 医者用カレンダーの全体スタイル */
+#doctor-calendar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-calendar-header {
+  text-align: center;
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.fc-toolbar {
+  background-color: #dfe6e9;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.fc-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 14px;
+}
+
+.fc-button:hover {
+  background-color: #c0392b;
+}
+
+.fc-today-button {
+  background-color: #f39c12;
+}
+
+.fc-today-button:hover {
+  background-color: #e67e22;
+}
+
+.fc-view-harness {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 医者用イベントのスタイル */
+.fc-event {
+  background-color: #8e44ad;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+}
+
+.fc-event:hover {
+  background-color: #6c3483;
+}
+
+/* 時間表示を強調 */
+.fc-timegrid-slot {
+  background-color: #f4f6f7;
+}
+
+.fc-timegrid-slot-label {
+  font-weight: bold;
+}
