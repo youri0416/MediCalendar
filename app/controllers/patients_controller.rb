@@ -8,7 +8,7 @@ class PatientsController < ApplicationController
     @patient = @doctor.patients.find(params[:id]) # 患者を取得
     @patient_schedules = @patient.patient_schedules # 患者のスケジュールを取得
     @schedules = @patient_schedules.map do |schedule| 
-      { title: "#{schedule.patient_type.name}", start: schedule.start_at, end: schedule.end_at } 
+      {id: schedule.id, title: "#{schedule.patient_type.name}", start: schedule.start_at, end: schedule.end_at } 
     end
   end
 
