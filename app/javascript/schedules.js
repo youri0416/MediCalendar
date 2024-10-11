@@ -1,32 +1,40 @@
 let patientCalendar; // グローバルスコープで定義
 
 document.addEventListener('turbo:load', function() {
-    var patientCalendarEl = document.getElementById('patient-calendar');
-    var schedules = JSON.parse(patientCalendarEl.getAttribute('data-schedules'));
+    var patientCalendarEl = document.getElementById("patient-calendar");
 
-    // patientCalendarを初期化
-    patientCalendar = new FullCalendar.Calendar(patientCalendarEl, {
-        initialView: 'dayGridMonth',
-        locale: 'ja',
-        timeZone: 'Asia/Tokyo',
-        events: schedules
-    });
+    // patient-calendar要素が存在する場合に処理を続ける
+    if (patientCalendarEl) {
+        // data-schedulesが正しく取得できるか確認
+        var schedules = JSON.parse(patientCalendarEl.getAttribute('data-schedules'));
 
-    patientCalendar.render();
+        // patientCalendarを初期化
+        patientCalendar = new FullCalendar.Calendar(patientCalendarEl, {
+            initialView: 'dayGridMonth',
+            locale: 'ja',
+            timeZone: 'Asia/Tokyo',
+            events: schedules
+        });
 
-    let selectedDate = null; // 選択した日付
-    let selectedEvent = null; // 選択したイベントオブジェクト
+        patientCalendar.render();
 
-    // 日付をクリックしたときの処理
-    patientCalendar.on('dateClick', function(info) {
-        selectedDate = info.dateStr; // クリックされた日付を保存
-    
-        // 患者のIDをデータ属性から取得
-        var patientId = document.getElementById('patient-calendar').getAttribute('data-patient-id'); 
-    
-        // 選択した日付と患者IDをパラメータとしてnewアクションにリダイレクト
-        window.location.href = `/patients/${patientId}/patient_schedules/new?date=${selectedDate}`;
-    });
+        let selectedDate = null; // 選択した日付
+        let selectedEvent = null; // 選択したイベントオブジェクト
+
+        // 日付をクリックしたときの処理
+        patientCalendar.on('dateClick', function(info) {
+            selectedDate = info.dateStr; // クリックされた日付を保存
+        
+            // 患者のIDと医者のIDを取得
+            var patientId = patientCalendarEl.getAttribute('data-patient-id'); 
+            var doctorId = patientCalendarEl.getAttribute('data-doctor-id');
+
+            // 選択した日付と患者ID、医者IDをパラメータとしてnewアクションにリダイレクト
+            window.location.href = `/doctors/${doctorId}/patients/${patientId}/patient_schedules/new?date=${selectedDate}`;
+        });
+    } else {
+        console.warn('Element with id "patient-calendar" not found.');
+    }
     
     // 医者用カレンダーの設定
     var doctorCalendarEl = document.getElementById('doctor-calendar'); // 医者カレンダーの要素を取得

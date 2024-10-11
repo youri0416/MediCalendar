@@ -17,8 +17,9 @@
     
     <!-- 患者カレンダー -->
     <div id="patient-calendar"
-     data-schedules="<%= @schedules_with_names.to_json %>"
-     data-patient-id="<%= @patient.id %>">
+     data-schedules="<%= @schedules.to_json %>"
+     data-patient-id="<%= @patient.id %>"
+     data-doctor-id="<%= @doctor.id %>">
     </div>
   </div>
 
@@ -27,7 +28,7 @@
     <!-- ToDoリスト -->
     <div class="todo-list">
       <h3>ToDoリスト</h3>
-      <%= link_to '➕', new_doctor_task_path(@doctor), class: 'add-task-button' %>
+      <%= link_to '➕', new_doctor_patient_task_path(@doctor, @patient), class: 'add-task-button' %>
       <table>
         <thead>
           <tr>
@@ -40,13 +41,13 @@
           </tr>
         </thead>
         <tbody>
-          <% @patient.tasks.each do |task| %>
+          <% @doctor.tasks.each do |task| %>
           <tr>
             <td>
             <input type="checkbox" <%= 'checked' if task.completed %> disabled>
           </td>
-          <td><%= Title.find(task.title_id).name if task.title_id.present? %></td> <!-- アクティブハッシュからタイトルを取得 -->
-          <td><%= Occupation.find(task.occupation_id).name if task.occupation_id.present? %></td> <!-- アクティブハッシュから職種を取得 -->
+          <td><%= Title.find(task.title_id).name if task.title_id.present? %></td> 
+          <td><%= Occupation.find(task.occupation_id).name if task.occupation_id.present? %></td> 
           <td><%= task.name %></td>
           <td><%= task.phone_number %></td>
           <td><%= task.content %></td>

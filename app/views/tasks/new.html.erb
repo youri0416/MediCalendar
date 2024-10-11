@@ -1,15 +1,15 @@
 <h2>新しいタスクを作成</h2>
 
-<%= form_with(model: [@doctor, @task], local: true) do |f| %>
+<%= form_with(model: [@doctor, @patient, @task], local: true) do |f| %>
 
   <div class="form-group">
     <%= f.label :title_id, "タイトル" %>
-    <%= f.number_field :title_id %>  <!-- タイトルID。適宜セレクトボックスに変更可 -->
+    <%= f.collection_select(:title_id, Title.all, :id, :name, {}) %>
   </div>
 
   <div class="form-group">
     <%= f.label :occupation_id, "職種" %>
-    <%= f.number_field :occupation_id %>  <!-- 職業ID。適宜セレクトボックスに変更可 -->
+    <%= f.collection_select(:occupation_id, Occupation.all, :id, :name, {}) %>
   </div>
 
   <div class="form-group">

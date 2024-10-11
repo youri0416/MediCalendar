@@ -19,7 +19,6 @@
 #### Association
 
 - has_many :patient_schedules
-- has_many :tasks
 - belongs_to :doctor
 
 ### PatientSchedules テーブル
@@ -85,4 +84,3 @@
 #### Association
 
 - belongs_to :doctor
-- belongs_to :patient
