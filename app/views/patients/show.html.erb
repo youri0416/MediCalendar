@@ -17,8 +17,9 @@
     
     <!-- 患者カレンダー -->
     <div id="patient-calendar"
-     data-schedules="<%= @schedules_with_names.to_json %>"
-     data-patient-id="<%= @patient.id %>">
+     data-schedules="<%= @schedules.to_json %>"
+     data-patient-id="<%= @patient.id %>"
+     data-doctor-id="<%= @doctor.id %>">
     </div>
   </div>
 
