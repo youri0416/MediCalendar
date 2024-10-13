@@ -6,10 +6,10 @@ Patient.destroy_all
 
 # Create fixed doctors and ensure creation with create!
 doctors = Doctor.create!([
-  { name: '山田 太郎', department_id: 1, phone_number: 1234 },
-  { name: '佐藤 花子', department_id: 2, phone_number: 2345 },
-  { name: '鈴木 一郎', department_id: 1, phone_number: 3456 },
-  { name: '田中 次郎', department_id: 3, phone_number: 4567 }
+  { name: '山田 太郎', department_id: 3, phone_number: 1234 },
+  { name: '佐藤 花子', department_id: 6, phone_number: 2345 },
+  { name: '鈴木 一郎', department_id: 10, phone_number: 3456 },
+  { name: '田中 次郎', department_id: 2, phone_number: 4567 }
 ])
 
 # Confirm that doctors array is correctly populated

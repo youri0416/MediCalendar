@@ -105,6 +105,11 @@ table th, table td {
   margin: 5px 0;
 }
 
+.doctor-info-link{
+text-decoration: none;
+color: inherit; /* リンクの色を継承 */
+}
+
 /* ToDoリスト */
 .todo-list {
   background-color: #fff;
@@ -122,6 +127,7 @@ table th, table td {
 
 /* 追加ボタンのスタイル */
 .add-task-button {
+  text-decoration: none;
   margin-left: 10px; /* タイトルとの間のスペース */
   padding: 8px 12px; /* 少し大きめに */
   background-color: #28a745; /* ボタンの背景色 */

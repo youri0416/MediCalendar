@@ -1,0 +1,35 @@
+<div class="doctor-show-container">
+  <!-- 左側コンテンツ -->
+  <div class="left-side-contents">
+    <!-- 医師情報 -->
+    <div class="doctor-info">
+      <p>医師名: <span><%= @doctor.name %></span></p>
+      <p>診療科: <span><%= @doctor.department.name %></span></p>
+      <p>PHS番号: <span><%= @doctor.phone_number %></span></p>
+    </div>
+
+    <!-- 患者リスト -->
+    <div class="patient-list">
+      <% @patients.each do |patient| %>
+        <%= link_to doctor_patient_path(patient.doctor, patient), class: "dr-patient-card-link" do %>
+          <div class="dr-patient-card">
+            <div class="dr-patient-icon">アイコン</div>
+            <div class="dr-patient-details">
+              <p>患者ID: <span><%= patient.number %></span></p>
+              <p>患者名: <span><%= patient.name %></span></p>
+              <p>生年月日: <span><%= patient.birthday.strftime('%Y年%m月%d日') %></span></p>
+              <p>年齢: <span><%= (Date.today.year - patient.birthday.year) - ((Date.today.month > patient.birthday.month || (Date.today.month == patient.birthday.month && Date.today.day >= patient.birthday.day)) ? 0 : 1) %>歳</span></p>
+              <p>性別: <span><%= patient.gender.name %></span></p>
+              <p>病棟: <span><%= patient.ward.name %></span></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+  </div>
+
+  <!-- 右側コンテンツ: カレンダー -->
+  <div class="right-side-contents">
+    <div id="doctor-calendar"></div>
+  </div>
+</div>

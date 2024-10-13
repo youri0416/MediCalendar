@@ -1,0 +1,94 @@
+/* メインコンテナのレイアウト */
+.doctor-show-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* 左側コンテンツ */
+.left-side-contents {
+  width: 60%;
+  background-color: #f4f9f4;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 医師情報 */
+.doctor-info {
+  background-color: #e0f7e0;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* 患者リスト */
+.patient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 患者カード全体のリンクスタイル */
+.dr-patient-card-link {
+  text-decoration: none;
+  color: inherit; /* リンクの色を継承 */
+}
+
+/* 患者カード */
+.dr-patient-card {
+  display: flex;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #f0f8ff; /* 初期の背景色 */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* カードにホバーしたときのスタイル */
+.dr-patient-card:hover {
+  background-color: #d8e6f2; /* ホバー時の背景色 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* ホバー時の影 */
+}
+
+/* 全体のリンクにカーソルを変える */
+.dr-patient-card {
+  cursor: pointer;
+}
+
+
+/* 患者アイコン */
+.dr-patient-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ffd700; /* アイコン部分の背景色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 患者詳細 */
+.dr-patient-details p {
+  margin-left: 20px;
+  padding: 2px 0;
+}
+
+/* 右側コンテンツ */
+.right-side-contents {
+  width: 40%;
+  background-color: #e0f0ff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* カレンダー */
+#doctor-calendar {
+  width: 100%;
+  height: 600px; /* カレンダーの高さを調整 */
+}
