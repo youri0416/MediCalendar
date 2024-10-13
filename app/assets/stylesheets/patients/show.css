@@ -12,13 +12,35 @@
   flex: 1.5;
 }
 
+/* 戻るボタンのスタイル */
+.back-button {
+  margin-bottom: 20px; /* 下に余白を追加 */
+  text-align: left; /* ボタンを左揃えに */
+}
+
+.back-button-link {
+  background-color: #007bff; /* ボタンの背景色 */
+  color: white; /* 文字色を白に */
+  padding: 10px 20px; /* ボタンの内側の余白 */
+  border-radius: 5px; /* 角を丸く */
+  text-decoration: none; /* 下線を消す */
+  font-size: 16px; /* フォントサイズ */
+  font-weight: bold; /* 太字 */
+}
+
+.back-button-link:hover {
+  background-color: #0056b3; /* ホバー時の背景色を変更 */
+}
+
 /* 患者情報 */
 .patient-info {
   display: flex;
   align-items: center; /* アイコンとテキストを垂直方向に中央揃え */
-  background-color: #f9f9f9;
+  background-color: #fff;
   padding: 15px;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ボックスシャドウを維持 */
+
 }
 
 .icon {
