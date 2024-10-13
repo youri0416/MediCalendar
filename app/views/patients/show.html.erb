@@ -82,11 +82,13 @@
     <!-- タイムスケジュール -->
     <div class="time-schedule">
       <h3>主治医</h3>
-      <div class="doctor-info">
-        <p>医師名: <span><%= @patient.doctor.name %></span></p>
-        <p>診療科: <span><%= @patient.doctor.department_id %></span></p>
-        <p>PHS番号: <span><%= @patient.doctor.phone_number %></span></p>
-      </div>
+      <%= link_to doctor_path(@patient.doctor), class: 'doctor-info-link' do %>
+        <div class="doctor-info">
+          <p>医師名: <span><%= @patient.doctor.name %></span></p>
+          <p>診療科: <span><%= @patient.doctor.department.name %></span></p>
+          <p>PHS番号: <span><%= @patient.doctor.phone_number %></span></p>
+        </div>
+      <% end %>
     </div>
 
     <!-- 医者のカレンダー -->

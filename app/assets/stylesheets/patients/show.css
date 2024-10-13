@@ -105,6 +105,11 @@ table th, table td {
   margin: 5px 0;
 }
 
+.doctor-info-link{
+text-decoration: none;
+color: inherit; /* リンクの色を継承 */
+}
+
 /* ToDoリスト */
 .todo-list {
   background-color: #fff;

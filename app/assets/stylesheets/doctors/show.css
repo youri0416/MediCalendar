@@ -1,0 +1,73 @@
+/* メインコンテナのレイアウト */
+.doctor-show-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* 左側コンテンツ */
+.left-side-contents {
+  width: 40%;
+  background-color: #f4f9f4;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 医師情報 */
+.doctor-info {
+  background-color: #e0f7e0;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* 患者リスト */
+.patient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 患者カード */
+.patient-card {
+  display: flex;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 患者アイコン */
+.patient-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #ffcc66;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 患者詳細 */
+.patient-details p {
+  margin: 0;
+  padding: 2px 0;
+}
+
+/* 右側コンテンツ */
+.right-side-contents {
+  width: 55%;
+  background-color: #e0f0ff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* カレンダー */
+#doctor-calendar {
+  width: 100%;
+  height: 600px; /* カレンダーの高さを調整 */
+}
