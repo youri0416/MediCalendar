@@ -15,5 +15,6 @@ class Department < ActiveHash::Base
   ]
   include ActiveHash::Associations
   has_many :patients
+  has_many :doctors
 
 end
