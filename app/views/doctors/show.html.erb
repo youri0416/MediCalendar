@@ -11,19 +11,21 @@
     <!-- 患者リスト -->
     <div class="patient-list">
       <% @patients.each do |patient| %>
-        <div class="patient-card">
-          <div class="patient-icon">アイコン</div>
-          <div class="patient-details">
-            <p>患者ID: <span><%= patient.number %></span></p>
-            <p>患者名: <span><%= patient.name %></span></p>
-            <p>生年月日: <span><%= patient.birthday.strftime('%Y年%m月%d日') %></span></p>
-            <p>年齢: <span><%= (Date.today.year - patient.birthday.year) - ((Date.today.month > patient.birthday.month || (Date.today.month == patient.birthday.month && Date.today.day >= patient.birthday.day)) ? 0 : 1) %>歳</span></p>
-            <p>性別: <span><%= patient.gender.name %></span></p>
-            <p>病棟: <span><%= patient.ward.name %></span></p>
+        <%= link_to doctor_patient_path(patient.doctor, patient), class: "dr-patient-card-link" do %>
+          <div class="dr-patient-card">
+            <div class="dr-patient-icon">アイコン</div>
+            <div class="dr-patient-details">
+              <p>患者ID: <span><%= patient.number %></span></p>
+              <p>患者名: <span><%= patient.name %></span></p>
+              <p>生年月日: <span><%= patient.birthday.strftime('%Y年%m月%d日') %></span></p>
+              <p>年齢: <span><%= (Date.today.year - patient.birthday.year) - ((Date.today.month > patient.birthday.month || (Date.today.month == patient.birthday.month && Date.today.day >= patient.birthday.day)) ? 0 : 1) %>歳</span></p>
+              <p>性別: <span><%= patient.gender.name %></span></p>
+              <p>病棟: <span><%= patient.ward.name %></span></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    </div>
+  </div>
   </div>
 
   <!-- 右側コンテンツ: カレンダー -->
