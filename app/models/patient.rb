@@ -1,6 +1,7 @@
 class Patient < ApplicationRecord
   has_many :patient_schedules
   belongs_to :doctor
+  has_one_attached :icon
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
@@ -11,5 +12,5 @@ class Patient < ApplicationRecord
   validates :department_id, numericality: { other_than: 1 } 
   validates :ward_id, numericality: { other_than: 1 } 
 
-
 end
+
