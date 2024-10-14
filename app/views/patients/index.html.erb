@@ -9,8 +9,28 @@
   <% @patients.each do |patient| %>
     <%= link_to doctor_patient_path(patient.doctor, patient), class: "patient-card-link" do %>
         <div class="patient-card">
-          <div class="patient-icon">
-            アイコン
+          <!-- 患者アイコンの条件分岐 -->
+          <div class="icon">
+            <% age = ((Time.zone.now - patient.birthday.to_time) / 1.year.seconds).floor %>
+            <% if age <= 15 %>
+              <% if patient.gender_id == 2 %> 
+                <%= image_tag 'boy.png', alt: '15歳以下 男性', class: 'patient-icon' %>
+              <% else %>
+                <%= image_tag 'girl.png', alt: '15歳以下 女性', class: 'patient-icon' %>
+              <% end %>
+            <% elsif age <= 64 %>
+              <% if patient.gender_id == 2 %>
+                <%= image_tag 'man.png', alt: '16歳〜64歳 男性', class: 'patient-icon' %>
+              <% else %>
+                <%= image_tag 'woman.png', alt: '16歳〜64歳 女性', class: 'patient-icon' %>
+              <% end %>
+            <% else %>
+              <% if patient.gender_id == 2 %>
+                <%= image_tag 'oldman.png', alt: '65歳以上 男性', class: 'patient-icon' %>
+              <% else %>
+                <%= image_tag 'oldwoman.png', alt: '65歳以上 女性', class: 'patient-icon' %>
+              <% end %>
+            <% end %>
           </div>
           <div class="patient-details">
             <p>患者ID: <%= patient.number %></p>
