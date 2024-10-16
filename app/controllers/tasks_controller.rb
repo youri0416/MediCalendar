@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_doctor
   before_action :set_patient
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_task, only: [:edit, :update, :destroy, :toggle_complete]
 
   def new
     @task = Task.new
@@ -32,6 +32,16 @@ class TasksController < ApplicationController
     redirect_to doctor_patient_path(@doctor, @patient)
   end
 
+  # 新しく追加する toggle_complete アクション
+  def toggle_complete
+    @task = Task.find(params[:id])
+
+    if @task.update(completed: params[:completed])
+      render json: { status: 'success', task: @task }
+    else
+      render json: { status: 'error', message: '更新に失敗しました' }, status: :unprocessable_entity
+    end
+  end
 
   private
   
@@ -52,5 +62,4 @@ class TasksController < ApplicationController
     @patient = @doctor.patients.find(params[:patient_id])
     @task = @doctor.tasks.find(params[:id])
   end
-
 end
