@@ -39,7 +39,19 @@ function renderDoctorCalendar() {
         initialView: 'timeGridDay',
         locale: 'ja',
         timeZone: 'Asia/Tokyo',
-        events: JSON.parse(doctorCalendarEl.getAttribute('data-schedules')) // 医者のスケジュールデータを設定
+        events: JSON.parse(doctorCalendarEl.getAttribute('data-schedules')), // 医者のスケジュールデータを設定
+        dateClick: function(info) {
+            // 新規予定登録ページ (doctor_schedules#new) へ遷移
+            var patientId = doctorCalendarEl.getAttribute('data-patient-id'); // 患者IDを取得
+            var from = patientId ? 'patient' : 'doctor'; // 患者IDがある場合はfrom=patient、ない場合はfrom=doctor
+            var url = `/doctors/${doctorCalendarEl.getAttribute('data-doctor-id')}/doctor_schedules/new?start_at=${info.dateStr}&from=${from}`;
+
+            // 患者ページの場合はpatient_idも追加
+            if (patientId) {
+                url += `&patient_id=${patientId}`;
+            }
+            window.location.href = url;
+        }
     });
 
     doctorCalendar.render();
