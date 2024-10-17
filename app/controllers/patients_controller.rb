@@ -1,7 +1,17 @@
 class PatientsController < ApplicationController
   def index
     @patients = Patient.all
+
+
+    if params[:ward_id].present?
+      @patients = @patients.where(ward_id: params[:ward_id])
+    end
+
+    if params[:department_id].present?
+      @patients = @patients.where(department_id: params[:department_id])
+    end
   end
+
 
   def show
     @doctor = Doctor.find(params[:doctor_id])

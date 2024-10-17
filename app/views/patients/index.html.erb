@@ -1,8 +1,26 @@
 <div class="sort-buttons">
-  <button class="btn all-patients-btn" onclick="showAllPatients()">患者一覧</button>
-  <button class="btn ward-btn" onclick="sortPatients('ward')">病棟</button>
-  <button class="btn department-btn" onclick="sortPatients('department')">診療科</button>
-  <button class="btn doctor-btn" onclick="sortPatients('doctor')">医師</button>
+  <%= link_to '患者一覧', root_path, class: 'btn all-patients-btn' %>  
+  <button class="btn ward-btn" onclick="toggleWardDropdown()">病棟</button>
+  <button class="btn department-btn" onclick="toggleDepartmentDropdown()">診療科</button>  
+
+  <!-- 病棟選択のドロップダウンメニュー -->
+  <div id="ward-dropdown" class="dropdown" style="display: none;">
+    <ul>
+      <% Ward.all.each do |ward| %>
+        <li onclick="filterByWard('<%= ward.id %>')"><%= ward.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <!-- 診療科選択のドロップダウンメニュー -->
+  <div id="department-dropdown" class="dropdown" style="display: none;">
+    <ul>
+      <% Department.all.each do |department| %>
+        <li onclick="filterByDepartment('<%= department.id %>')"><%= department.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>
 
 <div class="patient-list">
