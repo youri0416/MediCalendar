@@ -1,0 +1,51 @@
+<% provide(:title, '新規患者登録') %>
+
+<div class="new-patient-container">
+  <h1>新規患者登録</h1>
+
+  <%= form_with model: @patient, url: doctor_patients_path(@doctor), local: true do |form| %>
+    <div class="form-group">
+      <%= form.label :number, '患者ID' %>
+      <%= form.number_field :number, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :name, '患者名(漢字)' %>
+      <%= form.text_field :name, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :name_kana, '患者名(フリガナ)' %>
+      <%= form.text_field :name_kana, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :gender_id, '性別' %>
+      <%= form.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :birthday, '生年月日' %>
+      <%= form.date_select :birthday, start_year: Date.today.year - 100, end_year: Date.today.year, prompt: '選択してください', class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :department_id, '診療科' %>
+      <%= form.select :department_id, options_from_collection_for_select(Department.all, :id, :name), {}, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :ward_id, '病棟' %>
+      <%= form.select :ward_id, options_from_collection_for_select(Ward.all, :id, :name), {}, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form.hidden_field :doctor_id, value: params[:doctor_id] %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit '登録', class: 'btn submit-btn' %>
+      <%= link_to 'キャンセル', doctor_path(@doctor), class: 'btn cancel-btn' %>
+    </div>
+  <% end %>
+</div>

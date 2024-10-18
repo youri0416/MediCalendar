@@ -1,6 +1,17 @@
 <div class="doctor-show-container">
   <!-- 左側コンテンツ -->
+
   <div class="left-side-contents">
+  <!-- 患者一覧へ戻るボタン -->
+  <div class="back-button">
+    <%= link_to '患者一覧へ戻る', root_path, class: 'back-button-link' %>
+  </div>
+
+  <!-- 新規患者登録ボタン -->
+  <div class="new-patient-button">
+    <%= link_to '新規患者登録', new_doctor_patient_path(doctor_id: @doctor.id), class: 'btn new-patient-btn new-patient-link' %>
+  </div>
+
     <!-- 医師情報 -->
     <div class="doctor-info">
       <p>医師名: <span><%= @doctor.name %></span></p>
