@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_121224) do
   create_table "patients", charset: "utf8mb3", force: :cascade do |t|
     t.integer "number", null: false
     t.string "name", null: false
+    t.string "name_kana", null: false
     t.integer "gender_id", null: false
     t.date "birthday", null: false
     t.integer "department_id", null: false

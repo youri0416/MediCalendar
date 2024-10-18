@@ -10,6 +10,7 @@
 | ------------- | ---------- | ----------------------------- |
 | number        | integer    | null: false                   |
 | name          | string     | null: false                   |
+| name_kana     | string     | null: false                   |
 | gender_id     | integer    | null: false                   |
 | birthday      | date       | null: false                   |
 | department_id | integer    | null: false                   |
