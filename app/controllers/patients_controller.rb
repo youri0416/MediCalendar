@@ -1,4 +1,5 @@
 class PatientsController < ApplicationController
+
   def index
     @patients = Patient.all
 
@@ -12,6 +13,20 @@ class PatientsController < ApplicationController
     end
   end
 
+  def new
+    @doctor = Doctor.find(params[:doctor_id])
+    @patient = @doctor.patients.new
+  end
+
+  def create
+    @patient = Patient.new(patient_params)
+    @doctor = Doctor.find(params[:doctor_id])
+    if @patient.save
+      redirect_to doctor_patient_path(@doctor, @patient)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   def show
     @doctor = Doctor.find(params[:doctor_id])
@@ -27,4 +42,9 @@ class PatientsController < ApplicationController
   
   end
 
+  private
+
+  def patient_params
+  params.require(:patient).permit(:number, :name, :name_kana, :gender_id, :birthday, :department_id, :ward_id, :doctor_id)
+  end
 end
