@@ -16,6 +16,20 @@
   </head>
 
   <body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="header-container">
+      <h1 class="app-title">
+        <%= link_to 'MediCalendar', root_path, class: 'app-title-link' %>
+      </h1>
+    </div>
+  </header>
     <%= yield %>
+  <!-- フッター -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2024 MediCalendar. All rights reserved.</p>
+    </div>
+  </footer>
   </body>
 </html>

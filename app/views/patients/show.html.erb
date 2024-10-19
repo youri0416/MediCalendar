@@ -1,10 +1,6 @@
 <div class="main-container">
   <!-- 左側のコンテンツ -->
   <div class="left-side">
-    <!-- 患者一覧へ戻るボタン -->
-    <div class="back-button">
-      <%= link_to '患者一覧へ戻る', root_path, class: 'back-button-link' %>
-    </div>
     <!-- 患者情報 -->
     <div class="patient-info">
       <!-- 患者アイコンの条件分岐 -->
@@ -50,11 +46,36 @@
     </div>
   </div>
 
-  <!-- 中央のコンテンツ -->
-  <div class="center">
-<h3>DrのToDoリスト</h3>
-<%= link_to '➕', new_doctor_patient_task_path(@doctor, @patient), class: 'add-task-button' %>
+  <!-- 右側のコンテンツ -->
+  <div class="right-side">
+    <!-- タイムスケジュール -->
+    <div class="time-schedule">
+      <h3>主治医</h3>
+      <%= link_to doctor_path(@patient.doctor), class: 'doctor-info-link' do %>
+        <div class="doctor-info">
+          <p>医師名: <span><%= @patient.doctor.name %></span></p>
+          <p>診療科: <span><%= @patient.doctor.department.name %></span></p>
+          <p>PHS番号: <span><%= @patient.doctor.phone_number %></span></p>
+        </div>
+      <% end %>
+    </div>
 
+    <!-- 医者のカレンダー -->
+    <h3>主治医カレンダー</h3>
+    <div id="doctor-calendar"
+      data-schedules="<%= @d_schedules.to_json %>"
+      data-patient-id="<%= @patient.id %>"
+      data-doctor-id="<%= @doctor.id %>">
+    </div>
+  </div>
+  </div>
+
+  <!-- ToDOリスト -->
+  <div class="center">
+    <div class="todo-header">
+      <h3 class="todo-title">DrのToDoリスト</h3>
+      <%= link_to '➕', new_doctor_patient_task_path(@doctor, @patient), class: 'add-task-button' %>
+    </div>
 <table>
   <thead>
     <tr>
@@ -104,26 +125,3 @@
     </div>
   </div>
 
-  <!-- 右側のコンテンツ -->
-  <div class="right-side">
-    <!-- タイムスケジュール -->
-    <div class="time-schedule">
-      <h3>主治医</h3>
-      <%= link_to doctor_path(@patient.doctor), class: 'doctor-info-link' do %>
-        <div class="doctor-info">
-          <p>医師名: <span><%= @patient.doctor.name %></span></p>
-          <p>診療科: <span><%= @patient.doctor.department.name %></span></p>
-          <p>PHS番号: <span><%= @patient.doctor.phone_number %></span></p>
-        </div>
-      <% end %>
-    </div>
-
-    <!-- 医者のカレンダー -->
-    <h3>主治医カレンダー</h3>
-    <div id="doctor-calendar"
-      data-schedules="<%= @d_schedules.to_json %>"
-      data-patient-id="<%= @patient.id %>"
-      data-doctor-id="<%= @doctor.id %>">
-    </div>
-  </div>
-</div>

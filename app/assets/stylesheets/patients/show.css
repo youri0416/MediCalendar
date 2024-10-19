@@ -2,34 +2,13 @@
 .main-container {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
-  padding: 20px;
-  
+  gap: 20px;
+  padding: 10px;
 }
 
 /* 左側のスタイル */
 .left-side {
-  flex: 1.5;
-}
-
-/* 戻るボタンのスタイル */
-.back-button {
-  margin-bottom: 20px; /* 下に余白を追加 */
-  text-align: left; /* ボタンを左揃えに */
-}
-
-.back-button-link {
-  background-color: #007bff; /* ボタンの背景色 */
-  color: white; /* 文字色を白に */
-  padding: 10px 20px; /* ボタンの内側の余白 */
-  border-radius: 5px; /* 角を丸く */
-  text-decoration: none; /* 下線を消す */
-  font-size: 16px; /* フォントサイズ */
-  font-weight: bold; /* 太字 */
-}
-
-.back-button-link:hover {
-  background-color: #0056b3; /* ホバー時の背景色を変更 */
+  flex: 1.0;
 }
 
 /* 患者情報 */
@@ -41,18 +20,6 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ボックスシャドウを維持 */
 
-}
-
-/* .icon { */
-  width: 100px;
-  height: 100px;
-  background-color: #ddd;
-  border-radius: 50%;
-  margin-right: 30px; /* アイコンとテキストの間に余白 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
 }
 
 .patient-details p {
@@ -72,7 +39,7 @@ table th, table td {
 
 /* 右側のスタイル */
 .right-side {
-  flex: 1.0;
+  flex: 0.6;
 }
 
 .time-schedule {
@@ -111,6 +78,28 @@ color: inherit; /* リンクの色を継承 */
 }
 
 /* ToDoリスト */
+.center{
+  background-color: #fff;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+/* ToDoリストのタイトルデザイン */
+.todo-title {
+  font-size: 24px; /* 文字サイズ */
+  color: #333; /* 文字色 */
+  font-weight: bold; /* 太字 */
+  margin: 0; /* 余白をリセット */
+}
+
 .todo-list {
   background-color: #fff;
   border-radius: 8px;
@@ -156,7 +145,10 @@ table, th, td {
 
 th, td {
   padding: 10px; /* セル内の余白を確保 */
-  text-align: left;
+  text-align: left !important; /* すべてのセルを左揃えにする */
+  white-space: normal; /* 折り返しを許可 */
+  word-wrap: break-word; /* 長い単語を適切に折り返す */
+  font-size: small;
 }
 
 th {
@@ -195,7 +187,7 @@ th {
 /* チェックボックスのスタイル */
 input[type="checkbox"] {
   transform: scale(1.5); /* チェックボックスを大きく */
-  margin-right: 10px; /* チェックボックスの右に余白 */
+  margin: 3px 3px 3px 4px; !important;
 }
 
 /* テーブル行のホバー時の色変更 */

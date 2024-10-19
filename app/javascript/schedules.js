@@ -8,7 +8,14 @@ function renderPatientCalendar() {
         initialView: 'dayGridMonth',
         locale: 'ja',
         timeZone: 'Asia/Tokyo',
-        events: schedules
+        events: schedules,
+        headerToolbar: {              // カレンダー上部のツールバーをカスタマイズ
+            right: 'today prev,next',
+            left: 'title',
+        },
+        eventColor: '#378006',        // イベントのデフォルトカラー
+        height: 'auto',
+        contentHeight: 'auto'
     });
 
     patientCalendar.render();
