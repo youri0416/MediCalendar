@@ -119,7 +119,7 @@ color: inherit; /* リンクの色を継承 */
   text-decoration: none;
   margin-left: 10px; /* タイトルとの間のスペース */
   padding: 8px 12px; /* 少し大きめに */
-  background-color: #28a745; /* ボタンの背景色 */
+  background-color: #5cb3b7; /* ボタンの背景色 */
   color: white; /* ボタンの文字色 */
   border: none; /* ボーダーなし */
   border-radius: 5px; /* ボタンの角を丸く */
@@ -128,7 +128,7 @@ color: inherit; /* リンクの色を継承 */
 }
 
 .add-task-button:hover {
-  background-color: #218838; /* ホバー時の色 */
+  background-color: #2e7e99; /* ホバー時の色 */
 }
 
 /* テーブルのスタイル */

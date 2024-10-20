@@ -129,14 +129,14 @@
 
 /* 医者用イベントのスタイル */
 .fc-event {
-  background-color: #8e44ad;
+  background-color: #a7dadc;
   color: #fff;
   border: none;
   font-size: 14px;
 }
 
 .fc-event:hover {
-  background-color: #6c3483;
+  background-color: #3cd2d7;
 }
 
 /* 時間表示を強調 */

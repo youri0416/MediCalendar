@@ -37,11 +37,16 @@
 
 /* 医師情報 */
 .doctor-info {
-  background-color: #e0f7e0;
-  padding: 10px;
+  background-color: #86d3d7;
+  padding: 15px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 10px !important;
 }
+
+.doctor-info:hover {
+  background-color: #68d1d6; /* ホバー時の色 */
+}
+
 
 /* 患者リスト */
 .patient-list {
@@ -94,7 +99,6 @@
   background-color: #e0f0ff;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* カレンダー */

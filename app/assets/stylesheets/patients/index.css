@@ -73,19 +73,26 @@
 }
 
 .department-btn {
-  background: darkturquoise;
-  padding: 20px 30px;
+  background: #f1c84b;
+  padding: 20px 20px !important;
   margin: 0px 10px 0 10px;
   border: none;
   border-radius: 4px;
-  cursor: pointer
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .ward-btn {
-  background: coral;
-  padding: 20px 30px;
+  background: #f1c84b;
+  padding: 20px 20px !important;
   margin: 0px 10px 0 10px;
   border: none;
   border-radius: 4px;
-  cursor: pointer
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+
 }
