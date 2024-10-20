@@ -1,7 +1,9 @@
 class Patient < ApplicationRecord
   has_many :patient_schedules
+  has_many :tasks
   belongs_to :doctor
   has_one_attached :icon
+
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender

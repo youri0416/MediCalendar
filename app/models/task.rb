@@ -1,5 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :doctor
+  belongs_to :patient
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :title
   belongs_to :occupation
