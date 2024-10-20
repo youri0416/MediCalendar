@@ -16,7 +16,8 @@
   <div class="actions">
     <%= f.submit "更新" %>
   </div>
+
+<%= button_to "削除", doctor_patient_patient_schedule_path(@doctor, @patient, @patient_schedule), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "delete-button" %>
+
 <% end %>
 
-<!-- 削除ボタンを追加 -->
-<%= button_to "削除", doctor_patient_patient_schedule_path(@doctor, @patient, @patient_schedule), method: :delete, data: { confirm: "本当に削除しますか？" } %>

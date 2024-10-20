@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+/* ヘッダースタイル */
+.header-container {
+  background-color: #0b3c75;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* リンクのスタイル */
+.app-title-link {
+  color: white; /* リンクの色を白に */
+  text-decoration: none; /* 下線をなくす */
+}
+
+.app-title-link:hover {
+  text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+/* フッタースタイル */
+.footer-container {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}

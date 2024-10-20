@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
   function hideDropdowns() {
     const wardDropdown = document.getElementById('ward-dropdown');
     const departmentDropdown = document.getElementById('department-dropdown');
+    if (!wardDropdown) return; // 要素が存在しない場合は処理を中断
+    if (!departmentDropdown) return; // 要素が存在しない場合は処理を中断
+
     wardDropdown.style.display = 'none';
     departmentDropdown.style.display = 'none';
   }

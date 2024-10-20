@@ -1,28 +1,27 @@
-<h1>新規予定作成</h1>
-
-<p>選択した日付: <%= @selected_date %></p>
-
-<%= form_with(model: @patient_schedule, url: doctor_patient_patient_schedules_path) do |f| %>
+<h1>患者の新規予定作成</h1>
+<%= form_with(model: @patient_schedule, url: doctor_patient_patient_schedules_path) do |form| %>
   <div>
-    <%= f.label :start_at, "開始日時" %>
-    <%= f.datetime_local_field :start_at, 
+    <%= form.label :start_at, "開始日時" %>
+    <%= form.datetime_local_field :start_at, 
         value: "#{@selected_date}T00:00", 
         min: "#{@selected_date}T00:00", 
         max: "#{@selected_date}T23:59"%>
   </div>
   
   <div>
-    <%= f.label :end_at, "終了日時" %>
-    <%= f.datetime_local_field :end_at, 
+    <%= form.label :end_at, "終了日時" %>
+    <%= form.datetime_local_field :end_at, 
         value: "#{@selected_date}T01:00", 
         min: "#{@selected_date}T00:00", 
         max: "#{@selected_date}T23:59"%>
   </div>
   
   <div>
-    <%= f.label :patient_type_id, "予定" %>
-    <%= f.collection_select :patient_type_id, PatientType.all, :id, :name, {}, {class:"patient_type_select"} %> 
+    <%= form.label :patient_type_id, "予定" %>
+    <%= form.collection_select :patient_type_id, PatientType.all, :id, :name, {}, {class:"patient_type_select"} %> 
   </div>
-  
-  <%= f.submit "予定を保存" %>
+
+  <div class="actions">
+    <%= form.submit "登録" %>
+  </div>
 <% end %>
