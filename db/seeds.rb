@@ -25,8 +25,7 @@ doctors = Doctor.create!([
   { name: '木村 友美', department_id: 20, phone_number: rand(1000..9999).to_s },
   { name: '清水 敦子', department_id: 21, phone_number: rand(1000..9999).to_s },
   { name: '内田 恭平', department_id: 22, phone_number: rand(1000..9999).to_s },
-  { name: '森 亜美', department_id: 23, phone_number: rand(1000..9999).to_s },
-  { name: '石井 拓', department_id: 24, phone_number: rand(1000..9999).to_s }
+  { name: '森 亜美', department_id: 23, phone_number: rand(1000..9999).to_s }
 ])
 # Confirm that doctors array is correctly populated
 
