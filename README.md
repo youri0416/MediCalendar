@@ -62,8 +62,7 @@ https://docs.google.com/spreadsheets/d/1xCxYnH6A0ihKC5wDyb0qUVyyOf0ivAnZZhEvDY34
 医者一覧表示機能の実装。
 
 ## データベース設計
-
-ER 図入れる
+![MediCalendar](https://github.com/user-attachments/assets/4fda1aa4-aacc-44c2-9c0c-3ed3a185fbc2)
 
 ## テーブル設計
 
@@ -163,7 +162,7 @@ Rails7
 ## ローカルでの動作方法
 
 以下のコマンドを順に実行  
-% git clone https://github.com/youri0416/MediCalendar
+% git clone https://github.com/youri0416/MediCalendar  
 % cd MediCalendar  
 % bundle install  
 % rails db:create  
