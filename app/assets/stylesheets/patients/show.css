@@ -15,7 +15,7 @@
 .patient-info {
   display: flex;
   align-items: center; /* アイコンとテキストを垂直方向に中央揃え */
-  background-color: #fff;
+  background-color: #f0f8ff;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ボックスシャドウを維持 */

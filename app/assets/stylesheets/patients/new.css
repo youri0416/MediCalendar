@@ -49,6 +49,7 @@ h1 {
   cursor: pointer; /* カーソルをポインターに */
   font-size: 16px; /* フォントサイズ */
   font-weight: bold; /* 太字 */
+  text-decoration: none;
 }
 
 .cancel-btn:hover {
