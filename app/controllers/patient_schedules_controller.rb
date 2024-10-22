@@ -1,6 +1,8 @@
 class PatientSchedulesController < ApplicationController
   before_action :set_patient_schedule, only: [:edit, :update, :destroy]
   def new
+    @doctor = Doctor.find(params[:doctor_id])
+    @patient = @doctor.patients.find(params[:patient_id])
     @patient_schedule = PatientSchedule.new
     @selected_date = params[:date] # 選択した日付を渡す
     @patient_types = PatientType.all
@@ -14,6 +16,7 @@ class PatientSchedulesController < ApplicationController
       render :new
     end
   end
+
   def edit
   end
 
@@ -23,15 +26,19 @@ class PatientSchedulesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+
   end
 
   def destroy
-    @patient_schedule.destroy
-    redirect_to doctor_patient_path(@doctor, @patient)
+    if @patient_schedule.destroy
+      redirect_to doctor_patient_path(@doctor, @patient)
+    else
+      redirect_to edit_doctor_patient_patient_schedule_path(@doctor, @patient)
+    end
   end
 
 
-private
+  private
 
   def patient_schedule_params
     params.require(:patient_schedule).permit(:start_at, :end_at, :patient_type_id).merge(patient_id: params[:patient_id])
