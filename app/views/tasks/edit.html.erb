@@ -40,7 +40,7 @@
   </div>
 
   <div class="form-actions">
-    <%= form.submit '更新', class: 'btn btn-primary' %>
-    <%= link_to 'キャンセル', doctor_patient_path(@doctor, @patient), class: 'btn btn-secondary' %>
+    <%= form.submit '更新', class: 'btn btn-update' %>
+    <%= link_to 'キャンセル', doctor_patient_path(@doctor, @patient), class: 'btn btn-cancel' %>
   </div>
 <% end %>

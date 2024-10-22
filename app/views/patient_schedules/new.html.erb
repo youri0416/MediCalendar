@@ -23,5 +23,7 @@
 
   <div class="actions">
     <%= form.submit "登録" %>
+    <%= link_to "キャンセル", doctor_patient_path(@doctor, @patient) , class: 'btn btn-cancel'%>
+
   </div>
 <% end %>
