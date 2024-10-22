@@ -9,7 +9,7 @@
 /* 左側コンテンツ */
 .left-side-contents {
   width: 60%;
-  background-color: #f4f9f4;
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -22,7 +22,7 @@
 }
 
 .new-patient-link {
-  background-color: #007bff; /* ボタンの背景色 */
+  background-color: #447a9c; /* ボタンの背景色 */
   color: white; /* 文字色を白に */
   padding: 10px 20px; /* ボタンの内側の余白 */
   border-radius: 5px; /* 角を丸く */
@@ -32,19 +32,20 @@
 }
 
 .new-patient-link:hover {
-  background-color: #0056b3; /* ホバー時の背景色を変更 */
+  background-color: #36687a;
 }
 
 /* 医師情報 */
 .doctor-info {
-  background-color: #86d3d7;
+  background-color: #a7dadc;
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 10px !important;
 }
 
 .doctor-info:hover {
-  background-color: #68d1d6; /* ホバー時の色 */
+  background-color: #8bc6c8; /* ホバー時の色 */
+  cursor: pointer;
 }
 
 
@@ -96,11 +97,12 @@
 /* 右側コンテンツ */
 .right-side-contents {
   width: 40%;
-  background-color: #e0f0ff;
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
+  margin-left: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* カレンダー */
 
 
