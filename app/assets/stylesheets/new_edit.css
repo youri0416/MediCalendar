@@ -73,8 +73,30 @@ form input[type="submit"]:hover {
   border-radius: 4px; /* ボタンの角を丸くする */
   cursor: pointer; /* マウスカーソルをポインタに */
   text-decoration: none;
+  font-weight: bold;
 }
 
 .btn-cancel:hover {
   background-color: #5a6268; /* ホバー時の背景色 */
+}
+
+/* タスク */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  width: 100%; /* 幅を100%に設定 */
+  padding: 10px; /* 内側の余白 */
+  border: 1px solid #ccc; /* ボーダーの色 */
+  border-radius: 5px; /* 角を丸くする */
+  transition: border-color 0.3s; /* ボーダー色のトランジション */
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  border-color: #4a90e2; /* フォーカス時のボーダー色 */
+  outline: none; /* デフォルトのアウトラインを無くす */
 }
