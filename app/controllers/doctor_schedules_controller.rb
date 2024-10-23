@@ -1,7 +1,10 @@
 class DoctorSchedulesController < ApplicationController
   def new
     @doctor = Doctor.find(params[:doctor_id])
-    @doctor_schedule = DoctorSchedule.new
+    @doctor_schedule = DoctorSchedule.new(
+    start_at: Time.current.beginning_of_day,  # 00:00に設定
+    end_at: Time.current.beginning_of_day
+  )
     @doctor_types = DoctorType.all
 
     # 'from'の値を取得
