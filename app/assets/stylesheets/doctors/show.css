@@ -2,7 +2,7 @@
 .doctor-show-container {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 15px;
   background-color: #f9f9f9;
 }
 

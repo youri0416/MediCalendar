@@ -51,6 +51,7 @@
           </div>
           <div class="patient-details">
             <p>患者ID: <%= patient.number %></p>
+            <p>フリガナ: <%= patient.name_kana %></p>
             <p>患者名: <%= patient.name %></p>
             <p>生年月日: <%= patient.birthday.strftime('%Y年%m月%d日') %></p>
             <p>年齢: <%= (Date.today.year - patient.birthday.year) - ((Date.today.month > patient.birthday.month || (Date.today.month == patient.birthday.month && Date.today.day >= patient.birthday.day)) ? 0 : 1) %>歳</p>

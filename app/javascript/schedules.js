@@ -13,9 +13,9 @@ function renderPatientCalendar() {
             right: 'today prev,next',
             left: 'title',
         },
-        eventColor: '#378006',        // イベントのデフォルトカラー
         height: 'auto',
         contentHeight: 'auto'
+        
     });
 
     patientCalendar.render();

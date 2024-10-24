@@ -9,6 +9,8 @@
 /* 左側のスタイル */
 .left-side {
   flex: 1.0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* 患者情報 */
@@ -18,7 +20,7 @@
   background-color: #f0f8ff;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ボックスシャドウを維持 */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -40,13 +42,15 @@ table th, table td {
 /* 右側のスタイル */
 .right-side {
   flex: 0.6;
+  box-sizing: border-box;
+  overflow: hidden; /* オーバーフローを隠す */
 }
 
 .time-schedule {
   position: relative; /* 位置を相対的に設定 */
   background-color: #fff;
   border-radius: 8px;
-  padding: 20px;
+  padding: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
@@ -94,7 +98,7 @@ color: inherit; /* リンクの色を継承 */
 
 /* ToDoリストのタイトルデザイン */
 .todo-title {
-  font-size: 24px; /* 文字サイズ */
+  font-size: 20px; /* 文字サイズ */
   color: #333; /* 文字色 */
   font-weight: bold; /* 太字 */
   margin: 0; /* 余白をリセット */

@@ -29,6 +29,7 @@
 
       <div class="patient-details">
         <p>患者ID: <span><%= @patient.number %></span></p>
+        <p>フリガナ: <span><%= @patient.name_kana %></span></p>
         <p>患者名: <span><%= @patient.name %></span></p>
         <p>生年月日: <span><%= @patient.birthday.strftime('%Y年%m月%d日') %></span></p>
         <p>年齢: <span><%= (Date.today.year - @patient.birthday.year) - ((Date.today.month > @patient.birthday.month || (Date.today.month == @patient.birthday.month && Date.today.day >= @patient.birthday.day)) ? 0 : 1) %>歳</span></p>
@@ -67,60 +68,59 @@
       data-doctor-id="<%= @doctor.id %>">
     </div>
   </div>
+</div>
+
+<!-- Drのタスク -->
+<div class="center">
+  <div class="todo-header">
+    <h3 class="todo-title">主治医のタスク</h3>
+    <%= link_to '➕', new_doctor_patient_task_path(@doctor, @patient), class: 'add-task-button' %>
   </div>
+  <table>
+    <thead>
+      <tr>
+        <th>チェック</th>
+        <th>タイトル</th>
+        <th>職種</th>
+        <th>名前</th>
+        <th>PHS</th>
+        <th>内容</th>
+        <th>更新日時</th>
+        <th>編集</th>
+        <th>削除</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @doctor.tasks.each do |task| %>
+      <tr>
+        <td>
+          <input type="checkbox" class="task-checkbox" 
+             data-task-id="<%= task.id %>" 
+             data-doctor-id="<%= @doctor.id %>" 
+             data-patient-id="<%= @patient.id %>" 
+             <%= 'checked' if task.completed %>>
+        </td>
+        <td><%= Title.find(task.title_id).name if task.title_id.present? %></td> 
+        <td><%= Occupation.find(task.occupation_id).name if task.occupation_id.present? %></td> 
+        <td><%= task.name %></td>
+        <td><%= task.phone_number %></td>
+        <td><%= task.content %></td>
+        <td><%= task.updated_at.strftime('%Y年%m月%d日 %H:%M') if task.updated_at.present? %></td>
+        
+        <!-- 編集ボタン -->
+        <td>
+          <%= link_to '編集', edit_doctor_patient_task_path(@doctor, @patient, task), class: 'edit-task-button' %>
+        </td>
 
-  <!-- Drのタスク -->
-  <div class="center">
-    <div class="todo-header">
-      <h3 class="todo-title">主治医のタスク</h3>
-      <%= link_to '➕', new_doctor_patient_task_path(@doctor, @patient), class: 'add-task-button' %>
-    </div>
-<table>
-  <thead>
-    <tr>
-      <th>チェック</th>
-      <th>タイトル</th>
-      <th>職種</th>
-      <th>名前</th>
-      <th>PHS</th>
-      <th>内容</th>
-      <th>更新日時</th> <!-- 更新日時用のヘッダ -->
-      <th>編集</th> <!-- 編集ボタン用のヘッダ -->
-      <th>削除</th> <!-- 削除ボタン用のヘッダ -->
-    </tr>
-  </thead>
-  <tbody>
-    <% @doctor.tasks.each do |task| %>
-    <tr>
-      <td>
-        <input type="checkbox" class="task-checkbox" 
-           data-task-id="<%= task.id %>" 
-           data-doctor-id="<%= @doctor.id %>" 
-           data-patient-id="<%= @patient.id %>" 
-           <%= 'checked' if task.completed %>>      </td>
-      <td><%= Title.find(task.title_id).name if task.title_id.present? %></td> 
-      <td><%= Occupation.find(task.occupation_id).name if task.occupation_id.present? %></td> 
-      <td><%= task.name %></td>
-      <td><%= task.phone_number %></td>
-      <td><%= task.content %></td>
-      <td><%= task.updated_at.strftime('%Y年%m月%d日 %H:%M') if task.updated_at.present? %></td> <!-- 更新日時 -->
-      
-      <!-- 編集ボタン -->
-      <td>
-        <%= link_to '編集', edit_doctor_patient_task_path(@doctor, @patient, task), class: 'edit-task-button' %>
-      </td>
-
-      <!-- 削除ボタン -->
-      <td>
-        <%= link_to '削除', doctor_patient_task_path(@doctor, @patient, task), 
-                    method: :delete, 
-                    data: { turbo_method: :delete },
-                    class: 'delete-task-button' %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-    </div>
-  </div>
-
+        <!-- 削除ボタン -->
+        <td>
+          <%= link_to '削除', doctor_patient_task_path(@doctor, @patient, task), 
+                      method: :delete, 
+                      data: { turbo_method: :delete },
+                      class: 'delete-task-button' %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

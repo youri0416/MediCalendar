@@ -17,7 +17,8 @@
 /* ヘッダースタイル */
 .header-container {
   background-color: #0b3c75;
-  padding: 10px 20px;
+  padding: 20px 20px;
+  margin-bottom: 15px !important; /* 各フィールドの下部に余白 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,5 +44,41 @@
 .footer-container {
   background-color: #f1f1f1;
   padding: 20px;
-  text-align: center;
+  text-align: center;  
 }
+
+
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif; /* フォントを設定 */
+  background-color: #f7f7f7; /* 明るいグレーの背景色 */
+  color: #444; /* テキストの色を少し暗めに */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ビューポートの高さをカバーする */
+}
+
+h2 {
+  color: #4a90e2; /* タイトルの色を落ち着いた青に */
+  text-align: center; /* タイトルを中央揃え */
+  margin-bottom: 20px; /* 下部の余白 */
+}
+
+/* div {
+  margin-bottom: 15px; /* 各フィールドの下部に余白 */
+
+ */
+label {
+  font-weight: bold; /* ラベルを太字に */
+  display: block; /* ラベルをブロック要素に */
+  margin-bottom: 5px; /* ラベルと入力フィールドの間に余白 */
+  color: #333; /* ラベルの色 */
+}
+

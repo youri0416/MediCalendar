@@ -1,28 +1,33 @@
 <h1>医者の新規予定作成</h1>
-<%= form_with(model: @doctor_schedule, url: doctor_doctor_schedules_path(@doctor), local: true) do |form| %>
-  <div div class="field">
-    <%= form.label :start_at, "開始時間" %>
-    <%= form.datetime_local_field :start_at %>
-  </div>
+<div class="form-body">
 
-  <div class="field">
-    <%= form.label :end_at, "終了時間" %>
-    <%= form.datetime_local_field :end_at %>
-  </div>
+  <%= form_with(model: @doctor_schedule, url: doctor_doctor_schedules_path(@doctor), local: true) do |form| %>
+    <div div class="field">
+      <%= form.label :start_at, "開始時間" %>
+      <%= form.datetime_local_field :start_at %>
+    </div>
 
-  <!-- DoctorTypeのセレクトボックス -->
-  <div class="field">
-    <%= form.label :doctor_type_id, "予定" %>
-    <%= form.collection_select :doctor_type_id, DoctorType.all, :id, :name, prompt: '選択してください' %>
-  </div>
+    <div class="field">
+      <%= form.label :end_at, "終了時間" %>
+      <%= form.datetime_local_field :end_at %>
+    </div>
 
-  <!-- hidden_field_tag で 'from' と 'patient_id' を送信 -->
-  <%= hidden_field_tag :from, @from %>
-  <%= hidden_field_tag :patient_id, @patient_id %>
+    <!-- DoctorTypeのセレクトボックス -->
+    <div class="field">
+      <%= form.label :doctor_type_id, "予定" %>
+      <%= form.collection_select :doctor_type_id, DoctorType.all, :id, :name, prompt: '選択してください' %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit "登録" %>
-    <%= link_to 'キャンセル', request.referer || doctor_path(@doctor), class: 'btn cancel-btn' %>
+    <!-- hidden_field_tag で 'from' と 'patient_id' を送信 -->
+    <%= hidden_field_tag :from, @from %>
+    <%= hidden_field_tag :patient_id, @patient_id %>
 
-  </div>
-<% end %>
+    <div class="actions">
+      <%= form.submit "登録" %>
+      <%= link_to 'キャンセル', request.referer || doctor_path(@doctor), class: 'btn cancel-btn' %>
+
+    </div>
+  <% end %>
+</div>
+
+
