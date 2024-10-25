@@ -20,8 +20,8 @@ https://medicalendar-ueq1.onrender.com
 
 ## テスト用アカウント
 
-・Basic 認証  
-・Basic 認証パスワード
+・Basic 認証  medical  
+・Basic 認証パスワード 1234  
 
 ## 利用方法
 
@@ -54,6 +54,17 @@ https://medicalendar-ueq1.onrender.com
 https://docs.google.com/spreadsheets/d/1xCxYnH6A0ihKC5wDyb0qUVyyOf0ivAnZZhEvDY34mfw/edit?gid=982722306#gid=982722306
 
 ## 実装した機能についての画像や GIF およびその説明
+### 患者一覧ページ
+[![Image from Gyazo](https://i.gyazo.com/2cfa9c1adb079bcb19aca59a6db59931.gif)](https://gyazo.com/2cfa9c1adb079bcb19aca59a6db59931)
+
+### 患者詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/4bf6551116fa9ee46e44d52e37bd75a2.gif)](https://gyazo.com/4bf6551116fa9ee46e44d52e37bd75a2)
+
+### 患者予定登録ページ
+[![Image from Gyazo](https://i.gyazo.com/4bd1ee539cc3333e873fd69f3316f08c.gif)](https://gyazo.com/4bd1ee539cc3333e873fd69f3316f08c)
+
+### 医者詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/a875b047b2cafc31e047be55f41c01f4.gif)](https://gyazo.com/a875b047b2cafc31e047be55f41c01f4)
 
 ## 実装予定の機能
 
