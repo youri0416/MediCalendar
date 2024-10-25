@@ -39,7 +39,7 @@ https://medicalendar-ueq1.onrender.com
 
 ### 医者へのタスク作成
 
-1.患者の詳細ページから タスクリストの「➕ ボタン」をクリックする  
+1.患者の詳細ページから 主治医のタスクの「➕ ボタン」をクリックする  
 2.新規タスクリスト（タイトル・職種・名前・PHS・内容）を入力し、「作成ボタン」をクリックする  
 3.作成したタスクリストを編集する場合は該当するタスクの「編集ボタン」をクリックし、内容（タイトル・職種・名前・PHS・内容）を入力し、「更新ボタン」をクリックする  
 4.作成した タスクリストを削除する場合は該当するタスクの「削除ボタン」をクリックする
@@ -84,6 +84,7 @@ https://docs.google.com/spreadsheets/d/1xCxYnH6A0ihKC5wDyb0qUVyyOf0ivAnZZhEvDY34
 #### Association
 
 - has_many :patient_schedules
+- has_many :tasks
 - belongs_to :doctor
 
 ### PatientSchedules テーブル
@@ -149,13 +150,15 @@ https://docs.google.com/spreadsheets/d/1xCxYnH6A0ihKC5wDyb0qUVyyOf0ivAnZZhEvDY34
 #### Association
 
 - belongs_to :doctor
+- belongs_to :patient
 
 ## 画面遷移図
+![image](https://github.com/user-attachments/assets/a9611dbf-30b6-489f-b32c-14c285141ebc)
 
 ## 開発環境
 
 ・フロントエンド  
-HTML/CSS,JavaScript
+HTML/CSS,JavaScript  
 ・バックエンド  
 Rails7
 
@@ -172,5 +175,5 @@ Rails7
 ## 工夫したポイント
 
 ・患者の予定を表示することで院内スタッフがその予定に合わせて業務を進められるようにした。  
-・患者一覧から病棟ごと、診療科ごとにソート機能を追加し、薬剤師だけでなく、様々な職種で使用できるようにした。  
+・患者一覧から病棟ごと、診療科ごとのソート機能を追加し、薬剤師だけでなく、様々な職種で使用できるようにした。  
 ・医者のカレンダーを 1 日ごとの表示形式にし、医者の隙間時間を確認できるようにした。
