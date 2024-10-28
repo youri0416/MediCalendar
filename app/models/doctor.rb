@@ -5,4 +5,5 @@ class Doctor < ApplicationRecord
   
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :department  # アクティブハッシュと関連付け
+
 end
