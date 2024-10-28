@@ -10,9 +10,14 @@ class Patient < ApplicationRecord
   belongs_to :department
   belongs_to :ward
 
-  validates :gender_id, numericality: { other_than: 1 } 
-  validates :department_id, numericality: { other_than: 1 } 
-  validates :ward_id, numericality: { other_than: 1 } 
-
+  with_options presence: true do
+    validates :number, numericality: { only_integer: true }
+    validates :name
+    validates :name_kana, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: "はカタカナで入力してください" }
+    validates :gender_id, numericality: { other_than: 1, message: "を選択してください" }
+    validates :birthday
+    validates :department_id, numericality: { other_than: 1, message: "を選択してください" }
+    validates :ward_id, numericality: { other_than: 1, message: "を選択してください" }
+  end
 end
 
