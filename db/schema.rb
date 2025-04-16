@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_13_121224) do
+ActiveRecord::Schema[7.0].define(version: 2025_04_15_232541) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -100,7 +100,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_121224) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "doctor_schedules", "doctors"
   add_foreign_key "patient_schedules", "patients"
-  add_foreign_key "patients", "doctors"
+  add_foreign_key "patients", "doctors", on_delete: :cascade
   add_foreign_key "tasks", "doctors"
   add_foreign_key "tasks", "patients"
 end
