@@ -51,7 +51,6 @@ https://medicalendar-ueq1.onrender.com
 
 ## 洗い出した要件
 https://docs.google.com/spreadsheets/d/1I5dQnzKtamS3PA6nRPgHxtIlqldaXMr1wwrfNqJT0ro/edit?usp=sharing
-
 ## 実装した機能についての画像や GIF およびその説明
 ### 患者一覧ページ
 [![Image from Gyazo](https://i.gyazo.com/2cfa9c1adb079bcb19aca59a6db59931.gif)](https://gyazo.com/2cfa9c1adb079bcb19aca59a6db59931)
