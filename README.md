@@ -50,8 +50,7 @@ https://medicalendar-ueq1.onrender.com
 2.患者情報(患者 ID・患者名（漢字）・患者名（フリガナ）・性別・生年月日・診療科・病棟)を入力し、「登録ボタン」をクリックする
 
 ## 洗い出した要件
-
-https://docs.google.com/spreadsheets/d/1xCxYnH6A0ihKC5wDyb0qUVyyOf0ivAnZZhEvDY34mfw/edit?gid=982722306#gid=982722306
+https://docs.google.com/spreadsheets/d/1I5dQnzKtamS3PA6nRPgHxtIlqldaXMr1wwrfNqJT0ro/edit?usp=sharing
 
 ## 実装した機能についての画像や GIF およびその説明
 ### 患者一覧ページ
