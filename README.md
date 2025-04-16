@@ -7,7 +7,7 @@ MediCalendar
 ## アプリケーション概要
 
 病院内のスタッフが医者のスケジュールを把握することで、多忙な医者とのコミュニケーションを円滑にする。
-医者のタスク管理機能を利用することで、業務負担を軽減する。  
+医者のタスク管理機能を利用することで、業務負担を軽減する。
 
 ## アプリケーションを作成した背景
 
@@ -20,8 +20,8 @@ https://medicalendar-ueq1.onrender.com
 
 ## テスト用アカウント
 
-・Basic 認証  medical  
-・Basic 認証パスワード 1234  
+・Basic 認証 medical  
+・Basic 認証パスワード 1234
 
 ## 利用方法
 
@@ -51,19 +51,24 @@ https://medicalendar-ueq1.onrender.com
 
 ## 洗い出した要件
 
-https://docs.google.com/spreadsheets/d/1xCxYnH6A0ihKC5wDyb0qUVyyOf0ivAnZZhEvDY34mfw/edit?gid=982722306#gid=982722306
+https://docs.google.com/spreadsheets/d/1I5dQnzKtamS3PA6nRPgHxtIlqldaXMr1wwrfNqJT0ro/edit?usp=sharing
 
 ## 実装した機能についての画像や GIF およびその説明
+
 ### 患者一覧ページ
+
 [![Image from Gyazo](https://i.gyazo.com/2cfa9c1adb079bcb19aca59a6db59931.gif)](https://gyazo.com/2cfa9c1adb079bcb19aca59a6db59931)
 
 ### 患者詳細ページ
+
 [![Image from Gyazo](https://i.gyazo.com/4bf6551116fa9ee46e44d52e37bd75a2.gif)](https://gyazo.com/4bf6551116fa9ee46e44d52e37bd75a2)
 
 ### 患者予定登録ページ
+
 [![Image from Gyazo](https://i.gyazo.com/4bd1ee539cc3333e873fd69f3316f08c.gif)](https://gyazo.com/4bd1ee539cc3333e873fd69f3316f08c)
 
 ### 医者詳細ページ
+
 [![Image from Gyazo](https://i.gyazo.com/a875b047b2cafc31e047be55f41c01f4.gif)](https://gyazo.com/a875b047b2cafc31e047be55f41c01f4)
 
 ## 実装予定の機能
@@ -73,6 +78,7 @@ https://docs.google.com/spreadsheets/d/1xCxYnH6A0ihKC5wDyb0qUVyyOf0ivAnZZhEvDY34
 ・医者一覧表示機能の実装。
 
 ## データベース設計
+
 ![MediCalendar](https://github.com/user-attachments/assets/4fda1aa4-aacc-44c2-9c0c-3ed3a185fbc2)
 
 ## テーブル設計
@@ -164,6 +170,7 @@ https://docs.google.com/spreadsheets/d/1xCxYnH6A0ihKC5wDyb0qUVyyOf0ivAnZZhEvDY34
 - belongs_to :patient
 
 ## 画面遷移図
+
 ![image](https://github.com/user-attachments/assets/a9611dbf-30b6-489f-b32c-14c285141ebc)
 
 ## 開発環境
